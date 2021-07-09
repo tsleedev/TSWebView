@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  TSWebView
 //
-//  Created by tsleedev on 07/10/2021.
-//  Copyright (c) 2021 tsleedev. All rights reserved.
+//  Created by TAE SU LEE on 2021/07/08.
 //
 
 import UIKit
@@ -14,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }

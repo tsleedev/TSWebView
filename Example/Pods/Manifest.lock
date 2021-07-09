@@ -1,0 +1,16 @@
+PODS:
+  - TSWebView (0.1.0)
+
+DEPENDENCIES:
+  - TSWebView (from `../`)
+
+EXTERNAL SOURCES:
+  TSWebView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TSWebView: 1edf3045b36f3556421ff9b7272fe0a98e655ea7
+
+PODFILE CHECKSUM: ccd811b3a5eda00e5bde969f882b2029d13d86e9
+
+COCOAPODS: 1.10.1

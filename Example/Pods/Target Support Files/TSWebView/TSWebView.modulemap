@@ -1,0 +1,6 @@
+framework module TSWebView {
+  umbrella header "TSWebView-umbrella.h"
+
+  export *
+  module * { export * }
+}

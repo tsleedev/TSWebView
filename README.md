@@ -22,7 +22,7 @@ pod 'TSWebView'
 
 ## Author
 
-tsleedev, tslee.dev@gmail.com
+taesu, tslee.dev@gmail.com
 
 ## License
 
