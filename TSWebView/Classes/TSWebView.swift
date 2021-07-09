@@ -125,6 +125,7 @@ public class TSWebView: UIView {
     // MARK: - WebView
     func createWebView() {
         let webView = TSCookieManager.shared.createWKWebView(CGRect.zero)
+        webView.uiDelegate = self
         webView.scrollView.bounces = false
 //        webView.scrollView.decelerationRate = UIScrollView.DecelerationRate.normal
         insertSubview(webView, at: 0)
@@ -160,11 +161,8 @@ public extension TSWebView {
         return webView
     }
     
-    func javaScriptEnable(name: String, target: AnyObject, protocol bridgeProtocol: Protocol) {
-//        let javaScriptController = WKJavaScriptController(name: name, target: target, bridgeProtocol: bridgeProtocol)
-//        webView.javaScriptController = javaScriptController
-//        webView.prepareForJavaScriptController()
-        let javaScriptController = TSJavaScriptController(name: name, target: target, bridgeProtocol: bridgeProtocol)
+    func javaScriptEnable(target: AnyObject, protocol bridgeProtocol: Protocol) {
+        let javaScriptController = TSJavaScriptController(target: target, bridgeProtocol: bridgeProtocol)
         webView.setJavaScriptController(javaScriptController)
         self.javaScriptController = javaScriptController
     }

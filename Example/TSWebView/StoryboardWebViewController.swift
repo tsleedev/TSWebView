@@ -16,18 +16,18 @@ class StoryboardWebViewController: UIViewController {
 
         title = "Use Storyboard"
         
-        webView.javaScriptEnable(name: "tsapp", target: self, protocol: JavaScriptInterface.self)
-        webView.load(URLString: "https://tswebviewhosting.web.app/")
+        webView.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
+        webView.load(URLString: "https://tswebviewhosting.web.app")
     }
 }
 
 // MARK: -
 extension StoryboardWebViewController: JavaScriptInterface {
-    func openNewWebView(_ response: [String : Any]) {
+    func openNewWebView(_ response: Any) {
         print("openNewWebView")
     }
     
-    func closeWebView(_ response: [String : Any]) {
+    func closeWebView(_ response: Any) {
         print("closeWebView")
     }
     

@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		052AE62C918A379F0FCBFC8E62A4CF68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		11310C32964BE28210E0D3297B151E22 /* TSJavaScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17852CCD8D68AD3264FC4CA3E30E3833 /* TSJavaScriptController.swift */; };
 		5114CF62D06659066925AA288A9F7836 /* Pods-TSWebView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DD7CEDA396DBF830BCB5ED1C9C2D693 /* Pods-TSWebView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6207712C220FD2B9A53FF89CA4B73080 /* Pods-TSWebView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C4ECD1E1070DDFC74832B38C1C6266 /* Pods-TSWebView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7678516CE3544965852EF36E819E124F /* Pods-TSWebView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B92641110C75249070ADA637EA6A60BE /* Pods-TSWebView_Example-dummy.m */; };
-		7D42D865BF7DC7648A37B6DE5DB09EC7 /* TSCookieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B945F5529C61FADA567FCF09FEED65B /* TSCookieType.swift */; };
 		86D1CD3D3165C0062DD5DB6EBF3977B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		92ECEEABC643D2C403FC4CE40805B42F /* TSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97B38F43558B62831C809A97CD581E /* TSWebView.swift */; };
+		9067F5532698A9EC0056D596 /* TSCookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54B2698A9EC0056D596 /* TSCookieManager.swift */; };
+		9067F5542698A9EC0056D596 /* TSWebView+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54C2698A9EC0056D596 /* TSWebView+WKUIDelegate.swift */; };
+		9067F5552698A9EC0056D596 /* TSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54D2698A9EC0056D596 /* TSWebView.swift */; };
+		9067F5562698A9EC0056D596 /* TSJavaScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54F2698A9EC0056D596 /* TSJavaScriptController.swift */; };
+		9067F5572698A9EC0056D596 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F5502698A9EC0056D596 /* UIView+Extension.swift */; };
+		9067F5582698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F5512698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift */; };
+		9067F5592698A9EC0056D596 /* TSCookieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F5522698A9EC0056D596 /* TSCookieType.swift */; };
 		AF7D087287FFB505493A7A35429CD692 /* Pods-TSWebView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F59B2B55DF5F946B47A78582F10D451 /* Pods-TSWebView_Tests-dummy.m */; };
-		BA6770ACA0A5D73530F202F2A87FC28E /* TSCookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E5451997F8204E1DC2508DB73496A4 /* TSCookieManager.swift */; };
 		BEA6A4A598B3034C6ED609703836FBB6 /* TSWebView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE11F509A94187747709EC97C84314 /* TSWebView-dummy.m */; };
 		D09C2BFFA92AA74882F72C219FB9BE8C /* TSWebView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5684717F40FD39702B55B8734D44AC /* TSWebView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E014ED17CC992A47F772A4755736B90F /* LeakAvoiderScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E014F69994AFA4B31DB4129C99D5E0FA /* LeakAvoiderScriptMessageHandler.swift */; };
 		E9F63741C912B00D0D5D10187CAF778B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,13 +45,11 @@
 /* Begin PBXFileReference section */
 		0E0A4CA4D0DB6349BBF5198F272D714C /* Pods-TSWebView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		11B02ADE87580B0DA964D877FB52CC8C /* TSWebView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSWebView-Info.plist"; sourceTree = "<group>"; };
-		17852CCD8D68AD3264FC4CA3E30E3833 /* TSJavaScriptController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSJavaScriptController.swift; path = TSWebView/Classes/TSJavaScriptController.swift; sourceTree = "<group>"; };
 		19E3CB7DEE820222352A63C3B400FCB6 /* TSWebView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSWebView-prefix.pch"; sourceTree = "<group>"; };
 		283E58AE8D33FF7F2F9485AB7F4621D7 /* Pods-TSWebView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSWebView_Tests.modulemap"; sourceTree = "<group>"; };
 		2BA297FEE8D1A0BC3E9CB6BD81FD4730 /* Pods-TSWebView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSWebView_Example.modulemap"; sourceTree = "<group>"; };
-		32366F79C9B1F2FBBF9C602A87277ED1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		32366F79C9B1F2FBBF9C602A87277ED1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3EE1DCAC5B403364ABE0F7F5DBF8BEDB /* TSWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSWebView.release.xcconfig; sourceTree = "<group>"; };
-		4B945F5529C61FADA567FCF09FEED65B /* TSCookieType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSCookieType.swift; path = TSWebView/Classes/TSCookieType.swift; sourceTree = "<group>"; };
 		4DD7CEDA396DBF830BCB5ED1C9C2D693 /* Pods-TSWebView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSWebView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		634A5A0B99556D82C056D03CBEAE3C32 /* TSWebView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TSWebView.modulemap; sourceTree = "<group>"; };
 		66E4DB5957580EDCA63FE4F2CB7EA358 /* Pods-TSWebView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,25 +57,29 @@
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		80EE11F509A94187747709EC97C84314 /* TSWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSWebView-dummy.m"; sourceTree = "<group>"; };
 		81944098FB8F4F1F62118975A5149464 /* Pods-TSWebView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8BB4E150CB64BD7F51F6EE86BA057550 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		99989491D451FE966943C2EDF8E2B80B /* TSWebView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSWebView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8BB4E150CB64BD7F51F6EE86BA057550 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9067F54B2698A9EC0056D596 /* TSCookieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSCookieManager.swift; path = TSWebView/Classes/TSCookieManager.swift; sourceTree = "<group>"; };
+		9067F54C2698A9EC0056D596 /* TSWebView+WKUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TSWebView+WKUIDelegate.swift"; path = "TSWebView/Classes/TSWebView+WKUIDelegate.swift"; sourceTree = "<group>"; };
+		9067F54D2698A9EC0056D596 /* TSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSWebView.swift; path = TSWebView/Classes/TSWebView.swift; sourceTree = "<group>"; };
+		9067F54F2698A9EC0056D596 /* TSJavaScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSJavaScriptController.swift; sourceTree = "<group>"; };
+		9067F5502698A9EC0056D596 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9067F5512698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeakAvoiderScriptMessageHandler.swift; sourceTree = "<group>"; };
+		9067F5522698A9EC0056D596 /* TSCookieType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCookieType.swift; sourceTree = "<group>"; };
+		99989491D451FE966943C2EDF8E2B80B /* TSWebView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TSWebView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F3B2C54A2AA5070AD5C8509957D3D84 /* Pods-TSWebView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Example-Info.plist"; sourceTree = "<group>"; };
 		9FE4942CC4AE92A67CBE1B316BCA44E2 /* Pods-TSWebView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSWebView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AA088EDFB8D52FAE0628591A27A92234 /* Pods-TSWebView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AB8F659B9BA0B457A6F62A332312A9A7 /* Pods-TSWebView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B2C28B28705CA423AFA4553D54DA19D6 /* Pods-TSWebView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B49A6A836A781DBD80879AA57D116EAC /* Pods_TSWebView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TSWebView_Tests.framework; path = "Pods-TSWebView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49A6A836A781DBD80879AA57D116EAC /* Pods_TSWebView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSWebView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92641110C75249070ADA637EA6A60BE /* Pods-TSWebView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSWebView_Example-dummy.m"; sourceTree = "<group>"; };
-		B9E5451997F8204E1DC2508DB73496A4 /* TSCookieManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSCookieManager.swift; path = TSWebView/Classes/TSCookieManager.swift; sourceTree = "<group>"; };
-		BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TSWebView.framework; path = TSWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C4ECD1E1070DDFC74832B38C1C6266 /* Pods-TSWebView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSWebView_Example-umbrella.h"; sourceTree = "<group>"; };
-		CE14FE8276C38A0AB12530954FCC645A /* Pods_TSWebView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TSWebView_Example.framework; path = "Pods-TSWebView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE14FE8276C38A0AB12530954FCC645A /* Pods_TSWebView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSWebView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DAA01FBD424A7914AF14117C90B117 /* Pods-TSWebView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TSWebView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		D4FC7C3DC2BF63F84D8EE9FF2D57B244 /* TSWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSWebView.debug.xcconfig; sourceTree = "<group>"; };
 		D82A22F8B6DAE006B4766A7E34F6DA68 /* Pods-TSWebView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Tests-Info.plist"; sourceTree = "<group>"; };
-		DD97B38F43558B62831C809A97CD581E /* TSWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSWebView.swift; path = TSWebView/Classes/TSWebView.swift; sourceTree = "<group>"; };
-		E014F69994AFA4B31DB4129C99D5E0FA /* LeakAvoiderScriptMessageHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeakAvoiderScriptMessageHandler.swift; path = TSWebView/Classes/LeakAvoiderScriptMessageHandler.swift; sourceTree = "<group>"; };
 		ED5684717F40FD39702B55B8734D44AC /* TSWebView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSWebView-umbrella.h"; sourceTree = "<group>"; };
 		FF61C38EEC23B046EDEE4CB3E9DC12F9 /* Pods-TSWebView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSWebView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,16 +149,27 @@
 		865D81D27D34326639DF4B256AC30B95 /* TSWebView */ = {
 			isa = PBXGroup;
 			children = (
-				E014F69994AFA4B31DB4129C99D5E0FA /* LeakAvoiderScriptMessageHandler.swift */,
-				B9E5451997F8204E1DC2508DB73496A4 /* TSCookieManager.swift */,
-				4B945F5529C61FADA567FCF09FEED65B /* TSCookieType.swift */,
-				17852CCD8D68AD3264FC4CA3E30E3833 /* TSJavaScriptController.swift */,
-				DD97B38F43558B62831C809A97CD581E /* TSWebView.swift */,
+				9067F54B2698A9EC0056D596 /* TSCookieManager.swift */,
+				9067F54D2698A9EC0056D596 /* TSWebView.swift */,
+				9067F54C2698A9EC0056D596 /* TSWebView+WKUIDelegate.swift */,
+				9067F54E2698A9EC0056D596 /* Utils */,
 				2EAF90DB1331F70D223A7F7BF6343260 /* Pod */,
 				BB5D944A9A7CFC74FDEA8D31A4820DDE /* Support Files */,
 			);
 			name = TSWebView;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		9067F54E2698A9EC0056D596 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9067F5512698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift */,
+				9067F54F2698A9EC0056D596 /* TSJavaScriptController.swift */,
+				9067F5522698A9EC0056D596 /* TSCookieType.swift */,
+				9067F5502698A9EC0056D596 /* UIView+Extension.swift */,
+			);
+			name = Utils;
+			path = TSWebView/Classes/Utils;
 			sourceTree = "<group>";
 		};
 		969989727CA68A65C8AA290303973A56 /* Pods-TSWebView_Example */ = {
@@ -329,6 +344,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					2BC0996D278A302BBB8E6CEF2E484CDF = {
+						LastSwiftMigration = 1250;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -387,12 +407,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E014ED17CC992A47F772A4755736B90F /* LeakAvoiderScriptMessageHandler.swift in Sources */,
-				BA6770ACA0A5D73530F202F2A87FC28E /* TSCookieManager.swift in Sources */,
-				7D42D865BF7DC7648A37B6DE5DB09EC7 /* TSCookieType.swift in Sources */,
-				11310C32964BE28210E0D3297B151E22 /* TSJavaScriptController.swift in Sources */,
+				9067F5592698A9EC0056D596 /* TSCookieType.swift in Sources */,
+				9067F5572698A9EC0056D596 /* UIView+Extension.swift in Sources */,
+				9067F5532698A9EC0056D596 /* TSCookieManager.swift in Sources */,
+				9067F5582698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift in Sources */,
 				BEA6A4A598B3034C6ED609703836FBB6 /* TSWebView-dummy.m in Sources */,
-				92ECEEABC643D2C403FC4CE40805B42F /* TSWebView.swift in Sources */,
+				9067F5552698A9EC0056D596 /* TSWebView.swift in Sources */,
+				9067F5542698A9EC0056D596 /* TSWebView+WKUIDelegate.swift in Sources */,
+				9067F5562698A9EC0056D596 /* TSJavaScriptController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +518,7 @@
 			baseConfigurationReference = 3EE1DCAC5B403364ABE0F7F5DBF8BEDB /* TSWebView.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -579,8 +602,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -591,6 +613,7 @@
 			baseConfigurationReference = D4FC7C3DC2BF63F84D8EE9FF2D57B244 /* TSWebView.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -611,6 +634,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

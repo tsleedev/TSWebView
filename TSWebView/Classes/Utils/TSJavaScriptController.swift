@@ -16,15 +16,12 @@ extension WKWebView {
 }
 
 class TSJavaScriptController: NSObject {
-    private let name: String
-    private let bridgeProtocol: Protocol
-    
     private weak var target: AnyObject?
+    private let bridgeProtocol: Protocol
     
     private var bridgeList = [MethodBridge]()
     
-    init(name: String, target: AnyObject, bridgeProtocol: Protocol) {
-        self.name = name
+    init(target: AnyObject, bridgeProtocol: Protocol) {
         self.target = target
         self.bridgeProtocol = bridgeProtocol
         super.init()
@@ -82,17 +79,14 @@ private extension TSJavaScriptController {
     }
 }
 
-private typealias CFunction = @convention(c) (AnyObject, Selector, [String: Any]) -> Void
+private typealias CFunction = @convention(c) (AnyObject, Selector, Any) -> Void
 
 extension TSJavaScriptController: WKScriptMessageHandler {
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard
             let target = target,
-            let dictionary = message.body as? [String: Any],
             let bridge = bridgeList.first(where: { $0.jsSelector == message.name })
-        else {
-            return
-        }
+        else { return }
         
         guard let method = class_getInstanceMethod(target.classForCoder, bridge.nativeSelector) else {
             print("An unimplemented method has been called. (selector: \(bridge.nativeSelector))")
@@ -100,6 +94,6 @@ extension TSJavaScriptController: WKScriptMessageHandler {
         }
         
         let imp = method_getImplementation(method)
-        unsafeBitCast(imp, to: CFunction.self)(target, bridge.nativeSelector, dictionary)
+        unsafeBitCast(imp, to: CFunction.self)(target, bridge.nativeSelector, message.body)
     }
 }
