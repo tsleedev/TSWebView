@@ -13,23 +13,35 @@ class StoryboardWebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "Use Storyboard"
+        
+        title = "Storyboard"
         
         webView.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
         webView.load(URLString: "https://tswebviewhosting.web.app")
     }
 }
 
-// MARK: -
+// MARK: - JavaScriptInterface
 extension StoryboardWebViewController: JavaScriptInterface {
     func openNewWebView(_ response: Any) {
-        print("openNewWebView")
+        guard
+            let dictionary = response as? [String: Any],
+            let path = dictionary["path"] as? String
+        else { return }
+        let destination = CodeBaseWebViewController()
+        destination.path = path
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     func closeWebView(_ response: Any) {
-        print("closeWebView")
+        navigationController?.popViewController(animated: true)
     }
     
-    
+    func goBack(_ response: Any) {
+        if webView.canGoBack() {
+            webView.goBack()
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
 }

@@ -27,10 +27,6 @@ class TSJavaScriptController: NSObject {
         super.init()
         parseBridgeProtocol()
     }
-    
-    deinit {
-        print("\(String(describing: type(of: self))) - \(#function)")
-    }
 }
 
 // MARK: - Class

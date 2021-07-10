@@ -15,6 +15,7 @@
 		9067F54126989EBE0056D596 /* JavaScriptInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F53E26989EBE0056D596 /* JavaScriptInterface.swift */; };
 		9067F54226989EBE0056D596 /* StoryboardWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F53F26989EBE0056D596 /* StoryboardWebViewController.swift */; };
 		9067F5442698A03E0056D596 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9067F5432698A03E0056D596 /* LaunchScreen.xib */; };
+		90CDAC7F2699EBA300438002 /* CodeBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDAC7E2699EBA300438002 /* CodeBaseWebViewController.swift */; };
 		998E74647197BADFBA90EFE9 /* Pods_TSWebView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C68B4ED13B4C745541C66A2 /* Pods_TSWebView_Tests.framework */; };
 		A924C8EF74636E7E586A4903 /* Pods_TSWebView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207E5E9FAA27D5FA69058564 /* Pods_TSWebView_Example.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		9067F53E26989EBE0056D596 /* JavaScriptInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavaScriptInterface.swift; sourceTree = "<group>"; };
 		9067F53F26989EBE0056D596 /* StoryboardWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardWebViewController.swift; sourceTree = "<group>"; };
 		9067F5432698A03E0056D596 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		90CDAC7E2699EBA300438002 /* CodeBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBaseWebViewController.swift; sourceTree = "<group>"; };
 		9392388EC2291D2A916D94B0 /* Pods-TSWebView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSWebView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TSWebView_Tests/Pods-TSWebView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				9067F53D26989EBD0056D596 /* MainViewController.swift */,
 				9067F53F26989EBE0056D596 /* StoryboardWebViewController.swift */,
+				90CDAC7E2699EBA300438002 /* CodeBaseWebViewController.swift */,
 				9067F53E26989EBE0056D596 /* JavaScriptInterface.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -214,7 +217,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -339,6 +342,7 @@
 			files = (
 				9067F54126989EBE0056D596 /* JavaScriptInterface.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				90CDAC7F2699EBA300438002 /* CodeBaseWebViewController.swift in Sources */,
 				9067F54226989EBE0056D596 /* StoryboardWebViewController.swift in Sources */,
 				9067F54026989EBE0056D596 /* MainViewController.swift in Sources */,
 			);

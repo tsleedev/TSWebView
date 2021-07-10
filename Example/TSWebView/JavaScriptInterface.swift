@@ -12,4 +12,5 @@ import UIKit
 @objc protocol JavaScriptInterface {
     func openNewWebView(_ response: Any)
     func closeWebView(_ response: Any)
+    func goBack(_ response: Any)
 }
