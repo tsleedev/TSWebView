@@ -9,11 +9,11 @@ import UIKit
 import WebKit
 
 public class TSWebView: UIView {
-    var scrollView: UIScrollView {
+    public var scrollView: UIScrollView {
         return webView.scrollView
     }
     
-    var customUserAgent: String? {
+    public var customUserAgent: String? {
         get {
             return webView.customUserAgent
         }
@@ -22,47 +22,47 @@ public class TSWebView: UIView {
         }
     }
     
-    var url: URL? {
+    public var url: URL? {
         return webView.url
     }
     
-    var host: String? {
+    public var host: String? {
         return webView.url?.host
     }
     
-    var path: String? {
+    public var path: String? {
         return webView.url?.path
     }
     
-    var isLoading: Bool {
+    public var isLoading: Bool {
         return webView.isLoading
     }
     
-    weak var navigationDelegate: WKNavigationDelegate? {
+    public weak var navigationDelegate: WKNavigationDelegate? {
         didSet {
             webView.navigationDelegate = navigationDelegate
         }
     }
     
-    weak var uiDelegate: WKUIDelegate? {
+    public weak var uiDelegate: WKUIDelegate? {
         didSet {
             webView.uiDelegate = uiDelegate
         }
     }
     
-    weak var scrollViewDelegate: UIScrollViewDelegate? {
+    public weak var scrollViewDelegate: UIScrollViewDelegate? {
         didSet {
             webView.scrollView.delegate = scrollViewDelegate
         }
     }
     
-    var allowsBackForwardNavigationGestures: Bool = false {
+    public var allowsBackForwardNavigationGestures: Bool = false {
         didSet {
             webView.allowsBackForwardNavigationGestures = allowsBackForwardNavigationGestures
         }
     }
     
-    weak var webView: WKWebView!
+    public weak var webView: WKWebView!
     private weak var progressView: UIProgressView?
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
@@ -190,16 +190,16 @@ public extension TSWebView {
         }
     }
     
-    func load(URLString: String?) {
-        guard let URLString = URLString else { return }
-        if let URL = URL(string: URLString) {
-            load(URL: URL)
+    func load(urlString: String?) {
+        guard let urlString = urlString else { return }
+        if let url = URL(string: urlString) {
+            load(url: url)
         }
     }
     
-    func load(URL: URL?) {
-        guard let URL = URL else { return }
-        let request = URLRequest(url: URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 35.0)
+    func load(url: URL?) {
+        guard let url = url else { return }
+        let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 35.0)
         load(request: request)
     }
     

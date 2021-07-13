@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import WebKit
+import SafariServices
 import TSWebView
 
 class CodeBaseWebViewController: UIViewController {
     private weak var webView: TSWebView!
     
-    var url: String?
-    var path: String?
+    var urlString: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +21,12 @@ class CodeBaseWebViewController: UIViewController {
         title = "CodeBase"
         
         setUI()
+        webView?.uiDelegate = self
         webView?.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
-        if let url = url {
-            webView.load(URLString: url)
-        } else if let path = path {
-            webView.load(URLString: "https://tswebviewhosting.web.app\(path)")
+        if let urlString = urlString {
+            webView.load(urlString: urlString)
         } else {
-            webView.load(URLString: "https://tswebviewhosting.web.app")
+            webView.load(urlString: "https://tswebviewhosting.web.app")
         }
     }
 }
@@ -50,12 +50,18 @@ private extension CodeBaseWebViewController {
 // MARK: - JavaScriptInterface
 extension CodeBaseWebViewController: JavaScriptInterface {
     func openNewWebView(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let path = dictionary["path"] as? String
-        else { return }
+        guard let dictionary = response as? [String: Any] else { return }
+        let urlString: String?
+        if let url = dictionary["url"] as? String {
+            urlString = url
+        } else if let path = dictionary["path"] as? String {
+            urlString = "https://tswebviewhosting.web.app" + path
+        } else {
+            urlString = nil
+            return
+        }
         let destination = CodeBaseWebViewController()
-        destination.path = path
+        destination.urlString = urlString
         navigationController?.pushViewController(destination, animated: true)
     }
     
@@ -69,5 +75,49 @@ extension CodeBaseWebViewController: JavaScriptInterface {
         } else {
             navigationController?.popViewController(animated: true)
         }
+    }
+    
+    func openExternalWebView(_ response: Any) {
+        guard
+            let dictionary = response as? [String: Any],
+            let urlString = dictionary["url"] as? String,
+            let url = URL(string: urlString)
+        else { return }
+        let destination = SFSafariViewController(url: url)
+        present(destination, animated: true)
+    }
+    
+    func outlink(_ response: Any) {
+        guard
+            let dictionary = response as? [String: Any],
+            let urlString = dictionary["url"] as? String,
+            let url = URL(string: urlString)
+        else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+}
+
+// MARK: - WKUIDelegate
+extension CodeBaseWebViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Custom", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+            completionHandler()
+        }
+        alert.addAction(confirmAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+        let alert = UIAlertController(title: "Custom", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+            completionHandler(true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            completionHandler(false)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        present(alert, animated: true, completion: nil)
     }
 }
