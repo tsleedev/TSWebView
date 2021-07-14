@@ -15,4 +15,6 @@ import UIKit
     func goBack(_ response: Any)
     func openExternalWebView(_ response: Any)
     func outlink(_ response: Any)
+    func logEvent(_ response: Any)
+    func setUserProperty(_ response: Any)
 }
