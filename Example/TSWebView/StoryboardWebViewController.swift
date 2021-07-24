@@ -71,13 +71,27 @@ extension StoryboardWebViewController: JavaScriptInterface {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
+    func screenEvent(_ response: Any) {
+        guard
+            let dictionary = response as? [String: Any],
+            let name = dictionary["name"] as? String
+        else { return }
+        let message = "name = \(name)"
+        let alert = UIAlertController(title: "screenEvent", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
+        alert.addAction(confirmAction)
+        present(alert, animated: true, completion: nil)
+//        Analytics.logEvent(name, parameters: params)
+    }
+    
     func logEvent(_ response: Any) {
         guard
             let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String,
-            let params = dictionary["parameters"] as? [String: NSObject]
+            let name = dictionary["name"] as? String
+//            let params = dictionary["parameters"] as? [String: NSObject]
         else { return }
-        let message = "name = \(name), parameters = \(params)"
+//        let message = "name = \(name), parameters = \(params)"
+        let message = "name = \(name)"
         let alert = UIAlertController(title: "logEvent", message: message, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Confirm", style: .default)
         alert.addAction(confirmAction)
