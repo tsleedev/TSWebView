@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TSWebView'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.swift_version    = '5'
   s.summary          = 'Easy WebView.'
 
@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'TSWebView/Classes/**/*'
+  s.source_files = 'Sources/TSWebView/Classes/**/*'
   
   # s.resource_bundles = {
   #   'TSWebView' => ['TSWebView/Assets/*.png']

@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052AE62C918A379F0FCBFC8E62A4CF68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5114CF62D06659066925AA288A9F7836 /* Pods-TSWebView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DD7CEDA396DBF830BCB5ED1C9C2D693 /* Pods-TSWebView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6207712C220FD2B9A53FF89CA4B73080 /* Pods-TSWebView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C4ECD1E1070DDFC74832B38C1C6266 /* Pods-TSWebView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7678516CE3544965852EF36E819E124F /* Pods-TSWebView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B92641110C75249070ADA637EA6A60BE /* Pods-TSWebView_Example-dummy.m */; };
-		86D1CD3D3165C0062DD5DB6EBF3977B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		9067F5532698A9EC0056D596 /* TSCookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54B2698A9EC0056D596 /* TSCookieManager.swift */; };
-		9067F5542698A9EC0056D596 /* TSWebView+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54C2698A9EC0056D596 /* TSWebView+WKUIDelegate.swift */; };
-		9067F5552698A9EC0056D596 /* TSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54D2698A9EC0056D596 /* TSWebView.swift */; };
-		9067F5562698A9EC0056D596 /* TSJavaScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F54F2698A9EC0056D596 /* TSJavaScriptController.swift */; };
-		9067F5572698A9EC0056D596 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F5502698A9EC0056D596 /* UIView+Extension.swift */; };
-		9067F5582698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F5512698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift */; };
-		9067F5592698A9EC0056D596 /* TSCookieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067F5522698A9EC0056D596 /* TSCookieType.swift */; };
-		AF7D087287FFB505493A7A35429CD692 /* Pods-TSWebView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F59B2B55DF5F946B47A78582F10D451 /* Pods-TSWebView_Tests-dummy.m */; };
-		BEA6A4A598B3034C6ED609703836FBB6 /* TSWebView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EE11F509A94187747709EC97C84314 /* TSWebView-dummy.m */; };
-		D09C2BFFA92AA74882F72C219FB9BE8C /* TSWebView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5684717F40FD39702B55B8734D44AC /* TSWebView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E9F63741C912B00D0D5D10187CAF778B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		1A986B7D87CF6BFC23E4E7887E209B49 /* Pods-TSWebView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C4ECD1E1070DDFC74832B38C1C6266 /* Pods-TSWebView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AABA928F0BEB8EC27698BB0C8E714AC /* TSWebView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7088EB051BB77F7020E3E73FF536919C /* TSWebView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30D4CC9BFD8372B0033DF3DC882B0ECD /* TSWebView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE86CEA55653ABF52F26C7F46F6D14A /* TSWebView-dummy.m */; };
+		45DCF40F3A76F110E6E3D18A78709481 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11325683F0D4F60932E7322F2D6B355 /* UIView+Extension.swift */; };
+		469F26734EFC6891E8598E566C841D71 /* TSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3182F21BA44070691C5E3BB89826A /* TSWebView.swift */; };
+		50868C98F905060C733BCD2EBEF9C99B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		6FD1CF9A37DA1CD9AC7BD0BE9AE0D51A /* Pods-TSWebView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F59B2B55DF5F946B47A78582F10D451 /* Pods-TSWebView_Tests-dummy.m */; };
+		80E9D774E5FC7FCE38AAE37257CA3476 /* Pods-TSWebView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DD7CEDA396DBF830BCB5ED1C9C2D693 /* Pods-TSWebView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86BBF39ED83637FF1CAD03115A643E3C /* TSCookieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950E348C78F24A516FD518029EBD6A7D /* TSCookieType.swift */; };
+		8CA1DF5F405C61CF0E47B513F57AAF97 /* LeakAvoiderScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D89473846E99AF5E6364F04E7FF54 /* LeakAvoiderScriptMessageHandler.swift */; };
+		913EA237EBA8696619275686C6B751D5 /* TSCookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C691263A30F7EABFAE630B77DE5A13 /* TSCookieManager.swift */; };
+		929EE987FF4B0098D9AA4025D31A8919 /* TSWebView+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51CDE0FB4D37619A8CC731013FD5D8 /* TSWebView+WKUIDelegate.swift */; };
+		958B670F9DD871F2FFAAF046A34BCBD2 /* TSJavaScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF3DEEDEFE4C0B512299049CDD3FF6 /* TSJavaScriptController.swift */; };
+		B16A36382FF608D14EFBAC56DCF1644A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B8EDADCD91A2C769B8483C6BFCB084A1 /* Pods-TSWebView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B92641110C75249070ADA637EA6A60BE /* Pods-TSWebView_Example-dummy.m */; };
+		CF6BB2B47DD72C8C6267ECFA826382D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5129931114F2C67BBF94825F8C269B5F /* PBXContainerItemProxy */ = {
+		4A851AFE90077DB1FF0CF2884F60AAD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2BC0996D278A302BBB8E6CEF2E484CDF;
 			remoteInfo = TSWebView;
 		};
-		9E5B535B86EDAA76558D6D3120615D2E /* PBXContainerItemProxy */ = {
+		9CF3B86F3F48713983F92A5920C82F4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -43,83 +43,100 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01F3182F21BA44070691C5E3BB89826A /* TSWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSWebView.swift; path = Sources/TSWebView/Classes/TSWebView.swift; sourceTree = "<group>"; };
 		0E0A4CA4D0DB6349BBF5198F272D714C /* Pods-TSWebView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		11B02ADE87580B0DA964D877FB52CC8C /* TSWebView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSWebView-Info.plist"; sourceTree = "<group>"; };
-		19E3CB7DEE820222352A63C3B400FCB6 /* TSWebView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSWebView-prefix.pch"; sourceTree = "<group>"; };
+		11A0857DB5C5F32E1BF20170D156FDD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		283E58AE8D33FF7F2F9485AB7F4621D7 /* Pods-TSWebView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSWebView_Tests.modulemap"; sourceTree = "<group>"; };
 		2BA297FEE8D1A0BC3E9CB6BD81FD4730 /* Pods-TSWebView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSWebView_Example.modulemap"; sourceTree = "<group>"; };
-		32366F79C9B1F2FBBF9C602A87277ED1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3EE1DCAC5B403364ABE0F7F5DBF8BEDB /* TSWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSWebView.release.xcconfig; sourceTree = "<group>"; };
+		3596CCE0575777268374BF0D39E01392 /* TSWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSWebView.release.xcconfig; sourceTree = "<group>"; };
+		3D51CDE0FB4D37619A8CC731013FD5D8 /* TSWebView+WKUIDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TSWebView+WKUIDelegate.swift"; path = "Sources/TSWebView/Classes/TSWebView+WKUIDelegate.swift"; sourceTree = "<group>"; };
+		3F9D89473846E99AF5E6364F04E7FF54 /* LeakAvoiderScriptMessageHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeakAvoiderScriptMessageHandler.swift; sourceTree = "<group>"; };
+		4A47A0449C4D6E6F08B6BF1724BD5853 /* TSWebView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSWebView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4DD7CEDA396DBF830BCB5ED1C9C2D693 /* Pods-TSWebView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSWebView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		634A5A0B99556D82C056D03CBEAE3C32 /* TSWebView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TSWebView.modulemap; sourceTree = "<group>"; };
+		502DA8AB61DD6AE7743338D128F6D16F /* TSWebView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSWebView-Info.plist"; sourceTree = "<group>"; };
+		5874FB34ACB438B8AEA9826F36E2143A /* TSWebView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TSWebView.modulemap; sourceTree = "<group>"; };
 		66E4DB5957580EDCA63FE4F2CB7EA358 /* Pods-TSWebView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6F59B2B55DF5F946B47A78582F10D451 /* Pods-TSWebView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSWebView_Tests-dummy.m"; sourceTree = "<group>"; };
+		7088EB051BB77F7020E3E73FF536919C /* TSWebView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSWebView-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		80EE11F509A94187747709EC97C84314 /* TSWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSWebView-dummy.m"; sourceTree = "<group>"; };
+		7C34A83C0162690F73FC00D3378E1F84 /* TSWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSWebView.debug.xcconfig; sourceTree = "<group>"; };
+		80AF316D7110B8A022D0D45EC18B9551 /* TSWebView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSWebView-prefix.pch"; sourceTree = "<group>"; };
 		81944098FB8F4F1F62118975A5149464 /* Pods-TSWebView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8BB4E150CB64BD7F51F6EE86BA057550 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9067F54B2698A9EC0056D596 /* TSCookieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSCookieManager.swift; path = TSWebView/Classes/TSCookieManager.swift; sourceTree = "<group>"; };
-		9067F54C2698A9EC0056D596 /* TSWebView+WKUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TSWebView+WKUIDelegate.swift"; path = "TSWebView/Classes/TSWebView+WKUIDelegate.swift"; sourceTree = "<group>"; };
-		9067F54D2698A9EC0056D596 /* TSWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSWebView.swift; path = TSWebView/Classes/TSWebView.swift; sourceTree = "<group>"; };
-		9067F54F2698A9EC0056D596 /* TSJavaScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSJavaScriptController.swift; sourceTree = "<group>"; };
-		9067F5502698A9EC0056D596 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		9067F5512698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeakAvoiderScriptMessageHandler.swift; sourceTree = "<group>"; };
-		9067F5522698A9EC0056D596 /* TSCookieType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCookieType.swift; sourceTree = "<group>"; };
-		99989491D451FE966943C2EDF8E2B80B /* TSWebView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TSWebView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		87CF3DEEDEFE4C0B512299049CDD3FF6 /* TSJavaScriptController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSJavaScriptController.swift; sourceTree = "<group>"; };
+		950E348C78F24A516FD518029EBD6A7D /* TSCookieType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSCookieType.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F3B2C54A2AA5070AD5C8509957D3D84 /* Pods-TSWebView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Example-Info.plist"; sourceTree = "<group>"; };
 		9FE4942CC4AE92A67CBE1B316BCA44E2 /* Pods-TSWebView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSWebView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AA088EDFB8D52FAE0628591A27A92234 /* Pods-TSWebView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AB8F659B9BA0B457A6F62A332312A9A7 /* Pods-TSWebView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B2C28B28705CA423AFA4553D54DA19D6 /* Pods-TSWebView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSWebView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B49A6A836A781DBD80879AA57D116EAC /* Pods_TSWebView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSWebView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49A6A836A781DBD80879AA57D116EAC /* Pods-TSWebView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TSWebView_Tests"; path = Pods_TSWebView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92641110C75249070ADA637EA6A60BE /* Pods-TSWebView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSWebView_Example-dummy.m"; sourceTree = "<group>"; };
-		BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TSWebView; path = TSWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C4ECD1E1070DDFC74832B38C1C6266 /* Pods-TSWebView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSWebView_Example-umbrella.h"; sourceTree = "<group>"; };
-		CE14FE8276C38A0AB12530954FCC645A /* Pods_TSWebView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSWebView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE14FE8276C38A0AB12530954FCC645A /* Pods-TSWebView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TSWebView_Example"; path = Pods_TSWebView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DAA01FBD424A7914AF14117C90B117 /* Pods-TSWebView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TSWebView_Example-frameworks.sh"; sourceTree = "<group>"; };
-		D4FC7C3DC2BF63F84D8EE9FF2D57B244 /* TSWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSWebView.debug.xcconfig; sourceTree = "<group>"; };
 		D82A22F8B6DAE006B4766A7E34F6DA68 /* Pods-TSWebView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSWebView_Tests-Info.plist"; sourceTree = "<group>"; };
-		ED5684717F40FD39702B55B8734D44AC /* TSWebView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSWebView-umbrella.h"; sourceTree = "<group>"; };
+		DB24987E17389CEF4C52171CE046184E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E0C691263A30F7EABFAE630B77DE5A13 /* TSCookieManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSCookieManager.swift; path = Sources/TSWebView/Classes/TSCookieManager.swift; sourceTree = "<group>"; };
+		E11325683F0D4F60932E7322F2D6B355 /* UIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		FCE86CEA55653ABF52F26C7F46F6D14A /* TSWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSWebView-dummy.m"; sourceTree = "<group>"; };
 		FF61C38EEC23B046EDEE4CB3E9DC12F9 /* Pods-TSWebView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSWebView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4201DA3DC7946C4D55DA07015DAABE52 /* Frameworks */ = {
+		27E40ACBEB28A62FF3E469417A05932A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F63741C912B00D0D5D10187CAF778B /* Foundation.framework in Frameworks */,
+				50868C98F905060C733BCD2EBEF9C99B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9737E922A31333A978CEFD2EBFD3A03F /* Frameworks */ = {
+		C6630DF36DEC95209CA3FEE498F361B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				052AE62C918A379F0FCBFC8E62A4CF68 /* Foundation.framework in Frameworks */,
+				CF6BB2B47DD72C8C6267ECFA826382D4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C1682E9D27048E85C0B41F8CAC606CF2 /* Frameworks */ = {
+		D523AA93016ADDA395610359702A985A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86D1CD3D3165C0062DD5DB6EBF3977B3 /* Foundation.framework in Frameworks */,
+				B16A36382FF608D14EFBAC56DCF1644A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EAF90DB1331F70D223A7F7BF6343260 /* Pod */ = {
+		0A54720F959C5E1968B8E06DDB1886F5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8BB4E150CB64BD7F51F6EE86BA057550 /* LICENSE */,
-				32366F79C9B1F2FBBF9C602A87277ED1 /* README.md */,
-				99989491D451FE966943C2EDF8E2B80B /* TSWebView.podspec */,
+				3F9D89473846E99AF5E6364F04E7FF54 /* LeakAvoiderScriptMessageHandler.swift */,
+				950E348C78F24A516FD518029EBD6A7D /* TSCookieType.swift */,
+				87CF3DEEDEFE4C0B512299049CDD3FF6 /* TSJavaScriptController.swift */,
+				E11325683F0D4F60932E7322F2D6B355 /* UIView+Extension.swift */,
 			);
-			name = Pod;
+			name = Utils;
+			path = Sources/TSWebView/Classes/Utils;
+			sourceTree = "<group>";
+		};
+		189BAD881F9365F90A80F265304952FD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5874FB34ACB438B8AEA9826F36E2143A /* TSWebView.modulemap */,
+				FCE86CEA55653ABF52F26C7F46F6D14A /* TSWebView-dummy.m */,
+				502DA8AB61DD6AE7743338D128F6D16F /* TSWebView-Info.plist */,
+				80AF316D7110B8A022D0D45EC18B9551 /* TSWebView-prefix.pch */,
+				7088EB051BB77F7020E3E73FF536919C /* TSWebView-umbrella.h */,
+				7C34A83C0162690F73FC00D3378E1F84 /* TSWebView.debug.xcconfig */,
+				3596CCE0575777268374BF0D39E01392 /* TSWebView.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TSWebView";
 			sourceTree = "<group>";
 		};
 		4A4084EF516482D1C3FE0EB446BFED43 /* Pods-TSWebView_Tests */ = {
@@ -146,32 +163,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		865D81D27D34326639DF4B256AC30B95 /* TSWebView */ = {
-			isa = PBXGroup;
-			children = (
-				9067F54B2698A9EC0056D596 /* TSCookieManager.swift */,
-				9067F54D2698A9EC0056D596 /* TSWebView.swift */,
-				9067F54C2698A9EC0056D596 /* TSWebView+WKUIDelegate.swift */,
-				9067F54E2698A9EC0056D596 /* Utils */,
-				2EAF90DB1331F70D223A7F7BF6343260 /* Pod */,
-				BB5D944A9A7CFC74FDEA8D31A4820DDE /* Support Files */,
-			);
-			name = TSWebView;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		9067F54E2698A9EC0056D596 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				9067F5512698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift */,
-				9067F54F2698A9EC0056D596 /* TSJavaScriptController.swift */,
-				9067F5522698A9EC0056D596 /* TSCookieType.swift */,
-				9067F5502698A9EC0056D596 /* UIView+Extension.swift */,
-			);
-			name = Utils;
-			path = TSWebView/Classes/Utils;
-			sourceTree = "<group>";
-		};
 		969989727CA68A65C8AA290303973A56 /* Pods-TSWebView_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +180,16 @@
 			path = "Target Support Files/Pods-TSWebView_Example";
 			sourceTree = "<group>";
 		};
+		A480631D164DE147B4D4D52E771D3BA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE14FE8276C38A0AB12530954FCC645A /* Pods-TSWebView_Example */,
+				B49A6A836A781DBD80879AA57D116EAC /* Pods-TSWebView_Tests */,
+				BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AEC7BB0AB3D55F8D9229DCE5849A8DEF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,36 +199,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B4D0457A8AC714175ADFD9A1D15151AF /* Development Pods */ = {
+		CB2450ECB236775B325565AF52FB51E0 /* TSWebView */ = {
 			isa = PBXGroup;
 			children = (
-				865D81D27D34326639DF4B256AC30B95 /* TSWebView */,
+				E0C691263A30F7EABFAE630B77DE5A13 /* TSCookieManager.swift */,
+				01F3182F21BA44070691C5E3BB89826A /* TSWebView.swift */,
+				3D51CDE0FB4D37619A8CC731013FD5D8 /* TSWebView+WKUIDelegate.swift */,
+				CF10491A91A8669B6309BDBD0FD5E1AC /* Pod */,
+				189BAD881F9365F90A80F265304952FD /* Support Files */,
+				0A54720F959C5E1968B8E06DDB1886F5 /* Utils */,
 			);
-			name = "Development Pods";
+			name = TSWebView;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		BB5D944A9A7CFC74FDEA8D31A4820DDE /* Support Files */ = {
+		CF10491A91A8669B6309BDBD0FD5E1AC /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				634A5A0B99556D82C056D03CBEAE3C32 /* TSWebView.modulemap */,
-				80EE11F509A94187747709EC97C84314 /* TSWebView-dummy.m */,
-				11B02ADE87580B0DA964D877FB52CC8C /* TSWebView-Info.plist */,
-				19E3CB7DEE820222352A63C3B400FCB6 /* TSWebView-prefix.pch */,
-				ED5684717F40FD39702B55B8734D44AC /* TSWebView-umbrella.h */,
-				D4FC7C3DC2BF63F84D8EE9FF2D57B244 /* TSWebView.debug.xcconfig */,
-				3EE1DCAC5B403364ABE0F7F5DBF8BEDB /* TSWebView.release.xcconfig */,
+				11A0857DB5C5F32E1BF20170D156FDD8 /* LICENSE */,
+				DB24987E17389CEF4C52171CE046184E /* README.md */,
+				4A47A0449C4D6E6F08B6BF1724BD5853 /* TSWebView.podspec */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TSWebView";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				B4D0457A8AC714175ADFD9A1D15151AF /* Development Pods */,
+				E97DDEB2960E0225194ECC4D1DF5EDC7 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				E81E42750DF2C31446083BFD4B21BACA /* Products */,
+				A480631D164DE147B4D4D52E771D3BA4 /* Products */,
 				AEC7BB0AB3D55F8D9229DCE5849A8DEF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -240,40 +242,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E81E42750DF2C31446083BFD4B21BACA /* Products */ = {
+		E97DDEB2960E0225194ECC4D1DF5EDC7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CE14FE8276C38A0AB12530954FCC645A /* Pods_TSWebView_Example.framework */,
-				B49A6A836A781DBD80879AA57D116EAC /* Pods_TSWebView_Tests.framework */,
-				BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView.framework */,
+				CB2450ECB236775B325565AF52FB51E0 /* TSWebView */,
 			);
-			name = Products;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1BC25D6F4583D9FD6F9352F6C3B76361 /* Headers */ = {
+		B5B00FD632AEDC01D5DE0F5192C3B933 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6207712C220FD2B9A53FF89CA4B73080 /* Pods-TSWebView_Example-umbrella.h in Headers */,
+				80E9D774E5FC7FCE38AAE37257CA3476 /* Pods-TSWebView_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		346A641D460DBFF0734E10B8E67617F3 /* Headers */ = {
+		C20D8873F5AF9D11AAEBFDB80A8ED878 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09C2BFFA92AA74882F72C219FB9BE8C /* TSWebView-umbrella.h in Headers */,
+				1A986B7D87CF6BFC23E4E7887E209B49 /* Pods-TSWebView_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		594AE897871D6430E5DEAA882CBACD6B /* Headers */ = {
+		E7A8FBB8453F0A875D981E81C788AB6B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5114CF62D06659066925AA288A9F7836 /* Pods-TSWebView_Tests-umbrella.h in Headers */,
+				1AABA928F0BEB8EC27698BB0C8E714AC /* TSWebView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,31 +282,31 @@
 /* Begin PBXNativeTarget section */
 		2350BE96BFD78701AAD5FA78B6B155E1 /* Pods-TSWebView_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A514663632805749328222946503087 /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Tests" */;
+			buildConfigurationList = 91F555913BCC7F9E7EEB25D48A19C584 /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Tests" */;
 			buildPhases = (
-				594AE897871D6430E5DEAA882CBACD6B /* Headers */,
-				D7F2CE98E4CF11761C59C9E3447A0DBA /* Sources */,
-				4201DA3DC7946C4D55DA07015DAABE52 /* Frameworks */,
-				8B4B81A666D6B59418A4AF21EFFCEE6A /* Resources */,
+				B5B00FD632AEDC01D5DE0F5192C3B933 /* Headers */,
+				EF3DAB02D4865DC1FBCEA42BD0A9175B /* Sources */,
+				D523AA93016ADDA395610359702A985A /* Frameworks */,
+				C34AC5635F571CBF97511D2A872A3E6D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3CFDD56D9FDD676933B18128800BCD2B /* PBXTargetDependency */,
+				BF1DB4E3F6E9CA822D516216E42B9BED /* PBXTargetDependency */,
 			);
 			name = "Pods-TSWebView_Tests";
-			productName = "Pods-TSWebView_Tests";
-			productReference = B49A6A836A781DBD80879AA57D116EAC /* Pods_TSWebView_Tests.framework */;
+			productName = Pods_TSWebView_Tests;
+			productReference = B49A6A836A781DBD80879AA57D116EAC /* Pods-TSWebView_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
 		2BC0996D278A302BBB8E6CEF2E484CDF /* TSWebView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3323AA62F2DE5E28A54FDF70AA982CBE /* Build configuration list for PBXNativeTarget "TSWebView" */;
+			buildConfigurationList = 6B12F96D99A8B27F8316D5F59C14BF78 /* Build configuration list for PBXNativeTarget "TSWebView" */;
 			buildPhases = (
-				346A641D460DBFF0734E10B8E67617F3 /* Headers */,
-				BF936098DE725A77E008165CBD2C80E1 /* Sources */,
-				9737E922A31333A978CEFD2EBFD3A03F /* Frameworks */,
-				991D177321AFA78891EFBF2FC72F7A8C /* Resources */,
+				E7A8FBB8453F0A875D981E81C788AB6B /* Headers */,
+				B4EC08D9D16CEF015A6D5F04296BE8B1 /* Sources */,
+				C6630DF36DEC95209CA3FEE498F361B7 /* Frameworks */,
+				794097EAA8E2AA025AF9D9BE1FB02066 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -314,26 +314,26 @@
 			);
 			name = TSWebView;
 			productName = TSWebView;
-			productReference = BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView.framework */;
+			productReference = BB05378EAEE0D1B8B40A000B880BD9F0 /* TSWebView */;
 			productType = "com.apple.product-type.framework";
 		};
 		8BAE0A64DD73DE3C11F21E94A7766A68 /* Pods-TSWebView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A3505F1D812B7F8154E2D5064C222C8 /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Example" */;
+			buildConfigurationList = E7083B3FD8AFDE480F2540A86191FB5D /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Example" */;
 			buildPhases = (
-				1BC25D6F4583D9FD6F9352F6C3B76361 /* Headers */,
-				4160A5D1E9A73A25A6F71FEF5E687278 /* Sources */,
-				C1682E9D27048E85C0B41F8CAC606CF2 /* Frameworks */,
-				DCF438347EFC9019F855DDF4320A9EED /* Resources */,
+				C20D8873F5AF9D11AAEBFDB80A8ED878 /* Headers */,
+				9AA28971EB6D41BD41E49FCB4232E77A /* Sources */,
+				27E40ACBEB28A62FF3E469417A05932A /* Frameworks */,
+				DD3BEBE279B4014757D0893C43A0802E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3B970BA41B37D9C69E049F4BF1EC677B /* PBXTargetDependency */,
+				A9EED7F7870A5B59CC351583BC904A59 /* PBXTargetDependency */,
 			);
 			name = "Pods-TSWebView_Example";
-			productName = "Pods-TSWebView_Example";
-			productReference = CE14FE8276C38A0AB12530954FCC645A /* Pods_TSWebView_Example.framework */;
+			productName = Pods_TSWebView_Example;
+			productReference = CE14FE8276C38A0AB12530954FCC645A /* Pods-TSWebView_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -342,24 +342,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					2BC0996D278A302BBB8E6CEF2E484CDF = {
-						LastSwiftMigration = 1250;
-					};
-				};
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E81E42750DF2C31446083BFD4B21BACA /* Products */;
+			productRefGroup = A480631D164DE147B4D4D52E771D3BA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -371,21 +366,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8B4B81A666D6B59418A4AF21EFFCEE6A /* Resources */ = {
+		794097EAA8E2AA025AF9D9BE1FB02066 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		991D177321AFA78891EFBF2FC72F7A8C /* Resources */ = {
+		C34AC5635F571CBF97511D2A872A3E6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCF438347EFC9019F855DDF4320A9EED /* Resources */ = {
+		DD3BEBE279B4014757D0893C43A0802E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,56 +390,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4160A5D1E9A73A25A6F71FEF5E687278 /* Sources */ = {
+		9AA28971EB6D41BD41E49FCB4232E77A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7678516CE3544965852EF36E819E124F /* Pods-TSWebView_Example-dummy.m in Sources */,
+				B8EDADCD91A2C769B8483C6BFCB084A1 /* Pods-TSWebView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF936098DE725A77E008165CBD2C80E1 /* Sources */ = {
+		B4EC08D9D16CEF015A6D5F04296BE8B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067F5592698A9EC0056D596 /* TSCookieType.swift in Sources */,
-				9067F5572698A9EC0056D596 /* UIView+Extension.swift in Sources */,
-				9067F5532698A9EC0056D596 /* TSCookieManager.swift in Sources */,
-				9067F5582698A9EC0056D596 /* LeakAvoiderScriptMessageHandler.swift in Sources */,
-				BEA6A4A598B3034C6ED609703836FBB6 /* TSWebView-dummy.m in Sources */,
-				9067F5552698A9EC0056D596 /* TSWebView.swift in Sources */,
-				9067F5542698A9EC0056D596 /* TSWebView+WKUIDelegate.swift in Sources */,
-				9067F5562698A9EC0056D596 /* TSJavaScriptController.swift in Sources */,
+				8CA1DF5F405C61CF0E47B513F57AAF97 /* LeakAvoiderScriptMessageHandler.swift in Sources */,
+				913EA237EBA8696619275686C6B751D5 /* TSCookieManager.swift in Sources */,
+				86BBF39ED83637FF1CAD03115A643E3C /* TSCookieType.swift in Sources */,
+				958B670F9DD871F2FFAAF046A34BCBD2 /* TSJavaScriptController.swift in Sources */,
+				469F26734EFC6891E8598E566C841D71 /* TSWebView.swift in Sources */,
+				929EE987FF4B0098D9AA4025D31A8919 /* TSWebView+WKUIDelegate.swift in Sources */,
+				30D4CC9BFD8372B0033DF3DC882B0ECD /* TSWebView-dummy.m in Sources */,
+				45DCF40F3A76F110E6E3D18A78709481 /* UIView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7F2CE98E4CF11761C59C9E3447A0DBA /* Sources */ = {
+		EF3DAB02D4865DC1FBCEA42BD0A9175B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF7D087287FFB505493A7A35429CD692 /* Pods-TSWebView_Tests-dummy.m in Sources */,
+				6FD1CF9A37DA1CD9AC7BD0BE9AE0D51A /* Pods-TSWebView_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3B970BA41B37D9C69E049F4BF1EC677B /* PBXTargetDependency */ = {
+		A9EED7F7870A5B59CC351583BC904A59 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TSWebView;
 			target = 2BC0996D278A302BBB8E6CEF2E484CDF /* TSWebView */;
-			targetProxy = 5129931114F2C67BBF94825F8C269B5F /* PBXContainerItemProxy */;
+			targetProxy = 4A851AFE90077DB1FF0CF2884F60AAD1 /* PBXContainerItemProxy */;
 		};
-		3CFDD56D9FDD676933B18128800BCD2B /* PBXTargetDependency */ = {
+		BF1DB4E3F6E9CA822D516216E42B9BED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-TSWebView_Example";
 			target = 8BAE0A64DD73DE3C11F21E94A7766A68 /* Pods-TSWebView_Example */;
-			targetProxy = 9E5B535B86EDAA76558D6D3120615D2E /* PBXContainerItemProxy */;
+			targetProxy = 9CF3B86F3F48713983F92A5920C82F4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		102AB15F9156A1B384F09C71E5294FAA /* Release */ = {
+		4FD3FFF77B5758CF9C54DD274BF090E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66E4DB5957580EDCA63FE4F2CB7EA358 /* Pods-TSWebView_Example.release.xcconfig */;
 			buildSettings = {
@@ -479,9 +474,9 @@
 			};
 			name = Release;
 		};
-		1210DBABE2E4D3ED4BDFF3C976C170E9 /* Debug */ = {
+		5ED054BC3F49AC2876AD212D0BADB2AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2C28B28705CA423AFA4553D54DA19D6 /* Pods-TSWebView_Tests.debug.xcconfig */;
+			baseConfigurationReference = AB8F659B9BA0B457A6F62A332312A9A7 /* Pods-TSWebView_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -494,12 +489,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TSWebView_Tests/Pods-TSWebView_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TSWebView_Example/Pods-TSWebView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TSWebView_Tests/Pods-TSWebView_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-TSWebView_Example/Pods-TSWebView_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -512,41 +507,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		600EA921483F927D0E97ED6650556765 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EE1DCAC5B403364ABE0F7F5DBF8BEDB /* TSWebView.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TSWebView/TSWebView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TSWebView/TSWebView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.2.0;
-				MODULEMAP_FILE = "Target Support Files/TSWebView/TSWebView.modulemap";
-				PRODUCT_MODULE_NAME = TSWebView;
-				PRODUCT_NAME = TSWebView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -603,18 +563,52 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		A9DB45D5B3FBDAD7EB5928C7E54316FC /* Debug */ = {
+		95A3705174021EBF783E6E13E7B978EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4FC7C3DC2BF63F84D8EE9FF2D57B244 /* TSWebView.debug.xcconfig */;
+			baseConfigurationReference = B2C28B28705CA423AFA4553D54DA19D6 /* Pods-TSWebView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TSWebView_Tests/Pods-TSWebView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TSWebView_Tests/Pods-TSWebView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AB83FF1FDBF6810E3B9EBEFCAE6369FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3596CCE0575777268374BF0D39E01392 /* TSWebView.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -629,20 +623,19 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "Target Support Files/TSWebView/TSWebView.modulemap";
 				PRODUCT_MODULE_NAME = TSWebView;
 				PRODUCT_NAME = TSWebView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -710,41 +703,7 @@
 			};
 			name = Debug;
 		};
-		F7C3B4BBA6036A1D03269FBA161A57AA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB8F659B9BA0B457A6F62A332312A9A7 /* Pods-TSWebView_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TSWebView_Example/Pods-TSWebView_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TSWebView_Example/Pods-TSWebView_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FF2F49B7C1B1A9F6F021B27D861CF501 /* Release */ = {
+		BFB778B6DE734E85BE20D26FD6A3B7FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA088EDFB8D52FAE0628591A27A92234 /* Pods-TSWebView_Tests.release.xcconfig */;
 			buildSettings = {
@@ -779,18 +738,41 @@
 			};
 			name = Release;
 		};
+		CB2A83ECF12311538747582F6D6BD836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C34A83C0162690F73FC00D3378E1F84 /* TSWebView.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TSWebView/TSWebView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TSWebView/TSWebView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TSWebView/TSWebView.modulemap";
+				PRODUCT_MODULE_NAME = TSWebView;
+				PRODUCT_NAME = TSWebView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3323AA62F2DE5E28A54FDF70AA982CBE /* Build configuration list for PBXNativeTarget "TSWebView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9DB45D5B3FBDAD7EB5928C7E54316FC /* Debug */,
-				600EA921483F927D0E97ED6650556765 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -800,20 +782,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A3505F1D812B7F8154E2D5064C222C8 /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Example" */ = {
+		6B12F96D99A8B27F8316D5F59C14BF78 /* Build configuration list for PBXNativeTarget "TSWebView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F7C3B4BBA6036A1D03269FBA161A57AA /* Debug */,
-				102AB15F9156A1B384F09C71E5294FAA /* Release */,
+				CB2A83ECF12311538747582F6D6BD836 /* Debug */,
+				AB83FF1FDBF6810E3B9EBEFCAE6369FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A514663632805749328222946503087 /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Tests" */ = {
+		91F555913BCC7F9E7EEB25D48A19C584 /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1210DBABE2E4D3ED4BDFF3C976C170E9 /* Debug */,
-				FF2F49B7C1B1A9F6F021B27D861CF501 /* Release */,
+				95A3705174021EBF783E6E13E7B978EF /* Debug */,
+				BFB778B6DE734E85BE20D26FD6A3B7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7083B3FD8AFDE480F2540A86191FB5D /* Build configuration list for PBXNativeTarget "Pods-TSWebView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ED054BC3F49AC2876AD212D0BADB2AD /* Debug */,
+				4FD3FFF77B5758CF9C54DD274BF090E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
