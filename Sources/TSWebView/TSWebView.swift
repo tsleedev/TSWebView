@@ -5,95 +5,38 @@
 //  Created by TAE SU LEE on 2021/07/08.
 //
 
-import UIKit
 import WebKit
 
-public class TSWebView: UIView {
-    public var scrollView: UIScrollView {
-        return webView.scrollView
-    }
-    
-    public var customUserAgent: String? {
-        get {
-            return webView.customUserAgent
-        }
-        set {
-            webView.customUserAgent = newValue
-        }
-    }
-    
-    public var url: URL? {
-        return webView.url
-    }
-    
-    public var host: String? {
-        return webView.url?.host
-    }
-    
-    public var path: String? {
-        return webView.url?.path
-    }
-    
-    public var isLoading: Bool {
-        return webView.isLoading
-    }
-    
-    public weak var navigationDelegate: WKNavigationDelegate? {
-        didSet {
-            webView.navigationDelegate = navigationDelegate
-        }
-    }
-    
-    public weak var uiDelegate: WKUIDelegate? {
-        didSet {
-            webView.uiDelegate = uiDelegate
-        }
-    }
-    
-    public weak var scrollViewDelegate: UIScrollViewDelegate? {
-        didSet {
-            webView.scrollView.delegate = scrollViewDelegate
-        }
-    }
-    
-    public var allowsBackForwardNavigationGestures: Bool = false {
-        didSet {
-            webView.allowsBackForwardNavigationGestures = allowsBackForwardNavigationGestures
-        }
-    }
-    
-    public weak var webView: WKWebView!
+open class TSWebView: WKWebView {
     private weak var progressView: UIProgressView?
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
     
-    convenience init() {
-        self.init(frame: CGRect.zero)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+        super.init(frame: frame, configuration: configuration)
         initialize()
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
         initialize()
     }
     
     deinit {
-        print("\(String(describing: type(of: self))) - \(#function)")
+        print("deinit \(self)")
         removeObserver()
     }
     
     private func initialize() {
-        createWebView()
+        if #available(iOS 16.4, *) {
+            isInspectable = true
+        }
         createProgress()
         observeProgress()
     }
     
     private func observeProgress() {
-        progressObserver = webView.observe(\.estimatedProgress, options: .new) { [weak self] _, change in
+        progressObserver = observe(\.estimatedProgress, options: .new) { [weak self] _, change in
             guard
                 let self = self,
                 let newValue = change.newValue
@@ -111,7 +54,7 @@ public class TSWebView: UIView {
         progressView.trackTintColor = UIColor(red: 245.0 / 255.0, green: 239.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
         progressView.progressTintColor = UIColor(red: 138.0 / 255.0, green: 111.0 / 255.0, blue: 234.0 / 255.0, alpha: 1.0)
         progressView.isHidden = true
-        webView.addSubview(progressView)
+        addSubview(progressView)
         if let superview = progressView.superview {
             progressView.translatesAutoresizingMaskIntoConstraints = false
             progressView.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0).isActive = true
@@ -121,49 +64,17 @@ public class TSWebView: UIView {
         }
         self.progressView = progressView
     }
-    
-    // MARK: - WebView
-    func createWebView() {
-        let webView = TSCookieManager.shared.createWKWebView(CGRect.zero)
-        webView.uiDelegate = self
-        webView.scrollView.bounces = false
-//        webView.scrollView.decelerationRate = UIScrollView.DecelerationRate.normal
-        insertSubview(webView, at: 0)
-        if let superview = webView.superview {
-            webView.translatesAutoresizingMaskIntoConstraints = false
-            webView.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0).isActive = true
-            webView.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0).isActive = true
-            webView.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0).isActive = true
-            webView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0).isActive = true
-        }
-        self.webView = webView
-    }
-}
-
-// MARK: - Private
-private extension TSWebView {
 }
 
 public extension TSWebView {
-    func reCreateWebView() {
-        removeObserver()
-        webView.removeFromSuperview()
-        webView = nil
-        createWebView()
-    }
-    
     func removeObserver() {
         progressObserver?.invalidate()
         progressObserver = nil
     }
     
-    func getWebView() -> WKWebView {
-        return webView
-    }
-    
     func javaScriptEnable(target: AnyObject, protocol bridgeProtocol: Protocol) {
         let javaScriptController = TSJavaScriptController(target: target, bridgeProtocol: bridgeProtocol)
-        webView.setJavaScriptController(javaScriptController)
+        setJavaScriptController(javaScriptController)
         self.javaScriptController = javaScriptController
     }
     
@@ -172,20 +83,20 @@ public extension TSWebView {
         let target = LeakAvoiderScriptMessageHandler(delegate: target)
         messages.forEach { dic in
             if let name = dic["name"] as? String {
-                webView.configuration.userContentController.add(target, name: name)
+                configuration.userContentController.add(target, name: name)
             }
         }
     }
     
     func removeScriptMessageHandler(messages: [[String: Any]]?) {
         if #available(iOS 14.0, *) {
-            webView.configuration.userContentController.removeAllScriptMessageHandlers()
+            configuration.userContentController.removeAllScriptMessageHandlers()
             return
         }
         guard let messages = messages else { return }
         messages.forEach { dic in
             if let name = dic["name"] as? String {
-                webView.configuration.userContentController.removeScriptMessageHandler(forName: name)
+                configuration.userContentController.removeScriptMessageHandler(forName: name)
             }
         }
     }
@@ -200,66 +111,22 @@ public extension TSWebView {
     func load(url: URL?) {
         guard let url = url else { return }
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 35.0)
-        load(request: request)
-    }
-    
-    func load(request: URLRequest) {
-        webView.load(request)
-    }
-    
-    func canGoBack() -> Bool {
-        return webView.canGoBack
-    }
-    
-    func goBack() {
-        webView.goBack()
-    }
-    
-    func canGoForward() -> Bool {
-        return webView.canGoForward
-    }
-    
-    func goForward() {
-        webView.goForward()
-    }
-    
-    func reload() {
-        webView.reload()
-    }
-    
-    func stopLoading() {
-        webView.stopLoading()
-    }
-    
-    func contentInset(_ contentInset: UIEdgeInsets) {
-        webView.scrollView.contentInset = contentInset
-    }
-    
-    func scrollIndicatorInsets(_ scrollIndicatorInsets: UIEdgeInsets) {
-        webView.scrollView.scrollIndicatorInsets = scrollIndicatorInsets
-    }
-    
-    func scrollToTop() {
-        webView.scrollView.setContentOffset(CGPoint.zero, animated: true)
+        load(request)
     }
     
     @objc func evaluateJavaScript(_ script: String?, completion: ((Any?, Error?) -> Void)? = nil) {
         guard let script = script, !script.isEmpty else { return }
         DispatchQueue.main.async {
-            self.webView.evaluateJavaScript(script) { (response, error) in
+            self.evaluateJavaScript(script) { (response, error) in
                 if let error = error {
-                    print("evaluateJavaScript error = \(error)")
+                    print("TSWebView evaluateJavaScript error = \(error)")
                 }
                 if let response = response {
-                    print("evaluateJavaScript response = \(response)")
+                    print("TSWebView evaluateJavaScript response = \(response)")
                 }
                 
                 completion?(response, error)
             }
         }
-    }
-    
-    func loadFileURL(_ URL: URL, allowingReadAccessTo: URL) {
-        webView.loadFileURL(URL, allowingReadAccessTo: allowingReadAccessTo)
     }
 }

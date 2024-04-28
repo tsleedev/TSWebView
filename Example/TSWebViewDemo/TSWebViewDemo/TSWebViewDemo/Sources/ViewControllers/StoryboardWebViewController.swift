@@ -45,7 +45,7 @@ extension StoryboardWebViewController: JavaScriptInterface {
     }
     
     func goBack(_ response: Any) {
-        if webView.canGoBack() {
+        if webView.canGoBack {
             webView.goBack()
         } else {
             navigationController?.popViewController(animated: true)

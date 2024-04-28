@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7CED5A802BDD493C001437B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */; };
 		7CED5A822BDD493C001437B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A812BDD493C001437B0 /* SceneDelegate.swift */; };
-		7CED5A842BDD493C001437B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A832BDD493C001437B0 /* ViewController.swift */; };
 		7CED5A992BDD49A0001437B0 /* CodeBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A932BDD49A0001437B0 /* CodeBaseWebViewController.swift */; };
 		7CED5A9A2BDD49A0001437B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A942BDD49A0001437B0 /* MainViewController.swift */; };
 		7CED5A9B2BDD49A0001437B0 /* StoryboardWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A952BDD49A0001437B0 /* StoryboardWebViewController.swift */; };
@@ -24,7 +23,6 @@
 		7CED5A7C2BDD493C001437B0 /* TSWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CED5A812BDD493C001437B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CED5A832BDD493C001437B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CED5A932BDD49A0001437B0 /* CodeBaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBaseWebViewController.swift; sourceTree = "<group>"; };
 		7CED5A942BDD49A0001437B0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7CED5A952BDD49A0001437B0 /* StoryboardWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardWebViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */,
 				7CED5A812BDD493C001437B0 /* SceneDelegate.swift */,
-				7CED5A832BDD493C001437B0 /* ViewController.swift */,
 				7CED5AA32BDD49C5001437B0 /* Resources */,
 				7CED5A982BDD49A0001437B0 /* Sources */,
 			);
@@ -183,7 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CED5A9C2BDD49A0001437B0 /* JavaScriptInterface.swift in Sources */,
-				7CED5A842BDD493C001437B0 /* ViewController.swift in Sources */,
 				7CED5A992BDD49A0001437B0 /* CodeBaseWebViewController.swift in Sources */,
 				7CED5A9B2BDD49A0001437B0 /* StoryboardWebViewController.swift in Sources */,
 				7CED5A802BDD493C001437B0 /* AppDelegate.swift in Sources */,
@@ -340,6 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YW6867KB8Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TSWebViewDemo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -368,6 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YW6867KB8Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TSWebViewDemo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

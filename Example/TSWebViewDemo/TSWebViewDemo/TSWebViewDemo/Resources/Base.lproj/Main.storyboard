@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fcE-un-NF7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -71,23 +72,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoy-wm-SJr" customClass="TSWebView" customModule="TSWebView">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma6-9f-p5T" customClass="TSWebView" customModule="TSWebView">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uxv-w7-zmJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="xoy-wm-SJr" secondAttribute="bottom" id="43r-5U-mlQ"/>
-                            <constraint firstItem="xoy-wm-SJr" firstAttribute="top" secondItem="Uxv-w7-zmJ" secondAttribute="top" id="U4m-i4-Pmd"/>
-                            <constraint firstItem="Uxv-w7-zmJ" firstAttribute="trailing" secondItem="xoy-wm-SJr" secondAttribute="trailing" id="UvO-Te-Ge0"/>
-                            <constraint firstItem="xoy-wm-SJr" firstAttribute="leading" secondItem="Uxv-w7-zmJ" secondAttribute="leading" id="czQ-Zb-gfh"/>
+                            <constraint firstItem="Ma6-9f-p5T" firstAttribute="top" secondItem="Uxv-w7-zmJ" secondAttribute="top" id="2bh-1X-ma0"/>
+                            <constraint firstItem="Uxv-w7-zmJ" firstAttribute="trailing" secondItem="Ma6-9f-p5T" secondAttribute="trailing" id="GDL-uC-Php"/>
+                            <constraint firstItem="Ma6-9f-p5T" firstAttribute="leading" secondItem="Uxv-w7-zmJ" secondAttribute="leading" id="PkG-BB-cNs"/>
+                            <constraint firstAttribute="bottom" secondItem="Ma6-9f-p5T" secondAttribute="bottom" id="zuU-xK-2fc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E1k-6H-ePQ"/>
                     <connections>
-                        <outlet property="webView" destination="xoy-wm-SJr" id="OAc-9g-cxy"/>
+                        <outlet property="webView" destination="Ma6-9f-p5T" id="PTq-EZ-VmJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5as-wK-OZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
