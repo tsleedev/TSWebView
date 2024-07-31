@@ -1,32 +1,80 @@
 //
-//  StoryboardWebViewController.swift
-//  TSWebView
+//  OpenSourceWebViewController.swift
+//  TSWebViewDemo
 //
-//  Created by TAE SU LEE on 2021/07/08.
+//  Created by TAE SU LEE on 7/30/24.
 //  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
 import TSWebView
 import UIKit
 import WebKit
-import SafariServices
 
-class StoryboardWebViewController: UIViewController {
-    @IBOutlet private weak var webView: TSWebView!
-
+class OpenSourceWebViewController: TSWebViewController {
+    private var startURL: String?
+    
+    convenience init(webView: TSWebView, startURL: String) {
+        self.init(webView: webView)
+        self.startURL = startURL
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Storyboard"
-        
-        webView.uiDelegate = self
+        registerForAppStateNotifications()
         webView.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
-        webView.load(urlString: "https://tswebviewhosting.web.app")
+        
+        if let startURL = startURL {
+            webView.load(urlString: startURL)
+        }
+    }
+    
+    deinit {
+        unregisterForAppStateNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func createWebViewController(webView: TSWebView) -> TSWebViewController {
+        return OpenSourceWebViewController(webView: webView)
+    }
+    
+    override func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+            completionHandler()
+        }
+        alert.addAction(confirmAction)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - Notification
+extension OpenSourceWebViewController {
+    func registerForAppStateNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    func unregisterForAppStateNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func applicationDidEnterBackground() {
+        webView.evaluateJavaScript("onAppBackground()", completion: nil)
+    }
+    
+    @objc func applicationWillEnterForeground() {
+        webView.evaluateJavaScript("onAppForeground()", completion: nil)
     }
 }
 
 // MARK: - JavaScriptInterface
-extension StoryboardWebViewController: JavaScriptInterface {
+extension OpenSourceWebViewController: JavaScriptInterface {
     func screenEvent(_ response: Any) {
         guard
             let dictionary = response as? [String: Any],
@@ -78,44 +126,5 @@ extension StoryboardWebViewController: JavaScriptInterface {
         guard let callback = dictionary["callbackId"] as? String else { return }
         let script = "\(callback)();"
         webView.evaluateJavaScript(script, completion: nil)
-    }
-}
-
-// MARK: - WKUIDelegate
-extension StoryboardWebViewController: WKUIDelegate {
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
-            completionHandler()
-        }
-        alert.addAction(confirmAction)
-        present(alert, animated: true)
-    }
-    
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
-            completionHandler(true)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            completionHandler(false)
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(confirmAction)
-        present(alert, animated: true)
-    }
-    
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        if navigationAction.targetFrame == nil {
-            webView.load(navigationAction.request)
-        }
-        return nil
-    }
-    
-    func webView(_ webView: WKWebView, contextMenuConfigurationForElement elementInfo: WKContextMenuElementInfo, completionHandler: @escaping (UIContextMenuConfiguration?) -> Void) {
-        let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
-            return nil
-        }
-        completionHandler(configuration)
     }
 }

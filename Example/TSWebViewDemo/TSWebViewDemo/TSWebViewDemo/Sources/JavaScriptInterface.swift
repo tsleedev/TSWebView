@@ -3,6 +3,7 @@
 //  TSWebView
 //
 //  Created by TAE SU LEE on 2021/07/08.
+//  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
 import UIKit
@@ -10,12 +11,8 @@ import UIKit
 // Create protocol.
 // '@objc' keyword is required. because method call is based on ObjC.
 @objc protocol JavaScriptInterface {
-    func openNewWebView(_ response: Any)
-    func closeWebView(_ response: Any)
-    func goBack(_ response: Any)
-    func openExternalWebView(_ response: Any)
-    func outlink(_ response: Any)
     func screenEvent(_ response: Any)
     func logEvent(_ response: Any)
     func setUserProperty(_ response: Any)
+    func openPhoneSettings(_ response: Any)
 }

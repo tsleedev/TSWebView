@@ -3,6 +3,7 @@
 //  TSFramework
 //
 //  Created by TAE SU LEE on 2021/07/09.
+//  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
 import WebKit

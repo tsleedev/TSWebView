@@ -3,14 +3,40 @@
 //  TSFramework
 //
 //  Created by TAE SU LEE on 2021/07/08.
+//  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
 import WebKit
 
-open class TSWebView: WKWebView {
+class WebProgressPoolManager {
+    static let shared = WebProgressPoolManager()
+    var progressPoll = WKProcessPool()
+    private init() {}
+}
+
+open class TSWebView: WKWebView, Identifiable {
+    public let id: String = UUID().uuidString
+    
+    public static var applictionNameForUserAgent: String = "TSWebView/1.0"
+    
     private weak var progressView: UIProgressView?
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
+    
+    public convenience init() {
+        let configuration = WKWebViewConfiguration()
+        let userContentController = WKUserContentController()
+        configuration.applicationNameForUserAgent = Self.applictionNameForUserAgent
+        configuration.userContentController = userContentController
+        configuration.allowsInlineMediaPlayback = true
+        configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypes(rawValue: 0)
+        configuration.processPool = WebProgressPoolManager.shared.progressPoll
+        
+        let wkPreferences = WKPreferences()
+        wkPreferences.javaScriptCanOpenWindowsAutomatically = true
+        configuration.preferences = wkPreferences
+        self.init(frame: .zero, configuration: configuration)
+    }
     
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)

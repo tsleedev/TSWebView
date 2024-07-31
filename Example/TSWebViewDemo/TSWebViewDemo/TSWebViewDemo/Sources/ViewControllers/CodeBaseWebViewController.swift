@@ -3,6 +3,7 @@
 //  TSWebView_Example
 //
 //  Created by TAE SU LEE on 2021/07/08.
+//  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +12,7 @@ import SafariServices
 import TSWebView
 
 class CodeBaseWebViewController: UIViewController {
-    private weak var webView: TSWebView!
+    private let webView = TSWebView()
     
     var urlString: String?
 
@@ -20,9 +21,10 @@ class CodeBaseWebViewController: UIViewController {
         
         title = "CodeBase"
         
-        setUI()
-        webView?.uiDelegate = self
-        webView?.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
+        setupViews()
+        setupConstraints()
+        configureUI()
+        
         if let urlString = urlString {
             webView.load(urlString: urlString)
         } else {
@@ -33,69 +35,32 @@ class CodeBaseWebViewController: UIViewController {
 
 // MARK: - Setup
 private extension CodeBaseWebViewController {
-    func setUI() {
-        let webView = TSWebView()
+    /// Initialize and add subviews
+    func setupViews() {
         view.addSubview(webView)
-        if let superview = webView.superview {
-            webView.translatesAutoresizingMaskIntoConstraints = false
-            webView.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0).isActive = true
-            webView.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0).isActive = true
-            webView.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0).isActive = true
-            webView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0).isActive = true
-        }
-        self.webView = webView
+        webView.uiDelegate = self
+        webView.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
+    }
+    
+    /// Set up Auto Layout constraints
+    func setupConstraints() {
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    /// Initialize UI elements and localization
+    func configureUI() {
+        view.backgroundColor = .systemBackground
     }
 }
 
 // MARK: - JavaScriptInterface
 extension CodeBaseWebViewController: JavaScriptInterface {
-    func openNewWebView(_ response: Any) {
-        guard let dictionary = response as? [String: Any] else { return }
-        let urlString: String?
-        if let url = dictionary["url"] as? String {
-            urlString = url
-        } else if let path = dictionary["path"] as? String {
-            urlString = "https://tswebviewhosting.web.app" + path
-        } else {
-            urlString = nil
-            return
-        }
-        let destination = CodeBaseWebViewController()
-        destination.urlString = urlString
-        navigationController?.pushViewController(destination, animated: true)
-    }
-    
-    func closeWebView(_ response: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func goBack(_ response: Any) {
-        if webView.canGoBack {
-            webView.goBack()
-        } else {
-            navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    func openExternalWebView(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let urlString = dictionary["url"] as? String,
-            let url = URL(string: urlString)
-        else { return }
-        let destination = SFSafariViewController(url: url)
-        present(destination, animated: true)
-    }
-    
-    func outlink(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let urlString = dictionary["url"] as? String,
-            let url = URL(string: urlString)
-        else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-    
     func screenEvent(_ response: Any) {
         guard
             let dictionary = response as? [String: Any],
@@ -113,7 +78,7 @@ extension CodeBaseWebViewController: JavaScriptInterface {
         guard
             let dictionary = response as? [String: Any],
             let name = dictionary["name"] as? String
-//            let params = dictionary["parameters"] as? [String: NSObject]
+//            let params = dictionary["parameters"] as? [String: Any]
         else { return }
 //        let message = "name = \(name), parameters = \(params)"
         let message = "name = \(name)"
@@ -136,6 +101,17 @@ extension CodeBaseWebViewController: JavaScriptInterface {
         alert.addAction(confirmAction)
         present(alert, animated: true, completion: nil)
 //        Analytics.setUserProperty(value, forName: name)
+    }
+    
+    func openPhoneSettings(_ response: Any) {
+        guard let dictionary = response as? [String: Any] else { return }
+        
+        guard let setting = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(setting)
+                
+        guard let callback = dictionary["callbackId"] as? String else { return }
+        let script = "\(callback)();"
+        webView.evaluateJavaScript(script, completion: nil)
     }
 }
 
@@ -161,5 +137,19 @@ extension CodeBaseWebViewController: WKUIDelegate {
         alert.addAction(cancelAction)
         alert.addAction(confirmAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
+    
+    func webView(_ webView: WKWebView, contextMenuConfigurationForElement elementInfo: WKContextMenuElementInfo, completionHandler: @escaping (UIContextMenuConfiguration?) -> Void) {
+        let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+            return nil
+        }
+        completionHandler(configuration)
     }
 }

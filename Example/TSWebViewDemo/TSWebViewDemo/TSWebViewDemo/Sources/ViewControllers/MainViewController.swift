@@ -3,8 +3,10 @@
 //  TSWebView
 //
 //  Created by TAE SU LEE on 2021/07/08.
+//  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
+import TSWebView
 import UIKit
 
 enum WebViewType {
@@ -36,6 +38,11 @@ class MainViewController: UIViewController {
         
         title = "TSWebView"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -64,7 +71,11 @@ extension MainViewController: UITableViewDelegate {
             let destination = CodeBaseWebViewController()
             navigationController?.pushViewController(destination, animated: true)
         case .opensource:
-            break
+            let destination = OpenSourceWebViewController(
+                webView: TSWebView(),
+                startURL: "https://tswebviewhosting.web.app"
+            )
+            navigationController?.pushViewController(destination, animated: true)
         }
     }
 }
