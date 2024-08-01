@@ -1,6 +1,6 @@
 //
 //  CodeBaseWebViewController.swift
-//  TSWebView_Example
+//  TSWebViewDemo
 //
 //  Created by TAE SU LEE on 2021/07/08.
 //  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
@@ -15,7 +15,8 @@ class CodeBaseWebViewController: UIViewController {
     private let webView = TSWebView()
     
     var urlString: String?
-
+    private var jsHandler: JavaScriptHandler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +40,9 @@ private extension CodeBaseWebViewController {
     func setupViews() {
         view.addSubview(webView)
         webView.uiDelegate = self
-        webView.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
+        let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
+        webView.javaScriptEnable(target: jsHandler, protocol: JavaScriptInterface.self)
+        self.jsHandler = jsHandler
     }
     
     /// Set up Auto Layout constraints
@@ -56,62 +59,6 @@ private extension CodeBaseWebViewController {
     /// Initialize UI elements and localization
     func configureUI() {
         view.backgroundColor = .systemBackground
-    }
-}
-
-// MARK: - JavaScriptInterface
-extension CodeBaseWebViewController: JavaScriptInterface {
-    func screenEvent(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String
-        else { return }
-        let message = "name = \(name)"
-        let alert = UIAlertController(title: "screenEvent", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
-        alert.addAction(confirmAction)
-        present(alert, animated: true, completion: nil)
-//        Analytics.logEvent(name, parameters: params)
-    }
-    
-    func logEvent(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String
-//            let params = dictionary["parameters"] as? [String: Any]
-        else { return }
-//        let message = "name = \(name), parameters = \(params)"
-        let message = "name = \(name)"
-        let alert = UIAlertController(title: "logEvent", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
-        alert.addAction(confirmAction)
-        present(alert, animated: true, completion: nil)
-//        Analytics.logEvent(name, parameters: params)
-    }
-    
-    func setUserProperty(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String,
-            let value = dictionary["value"] as? String
-        else { return }
-        let message = "name = \(name), value = \(value)"
-        let alert = UIAlertController(title: "setUserProperty", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
-        alert.addAction(confirmAction)
-        present(alert, animated: true, completion: nil)
-//        Analytics.setUserProperty(value, forName: name)
-    }
-    
-    func openPhoneSettings(_ response: Any) {
-        guard let dictionary = response as? [String: Any] else { return }
-        
-        guard let setting = URL(string: UIApplication.openSettingsURLString) else { return }
-        UIApplication.shared.open(setting)
-                
-        guard let callback = dictionary["callbackId"] as? String else { return }
-        let script = "\(callback)();"
-        webView.evaluateJavaScript(script, completion: nil)
     }
 }
 

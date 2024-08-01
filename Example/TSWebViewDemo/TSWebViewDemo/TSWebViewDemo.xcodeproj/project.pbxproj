@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C5F999F2C5878BB0036D6BC /* OpenSourceWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F999E2C5878BB0036D6BC /* OpenSourceWebViewController.swift */; };
 		7C5F99A22C587A110036D6BC /* TSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F99A12C587A110036D6BC /* TSNavigationController.swift */; };
+		7C5F99A42C5B07830036D6BC /* JavaScriptHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F99A32C5B07830036D6BC /* JavaScriptHandler.swift */; };
 		7CED5A802BDD493C001437B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */; };
 		7CED5A822BDD493C001437B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A812BDD493C001437B0 /* SceneDelegate.swift */; };
 		7CED5A992BDD49A0001437B0 /* CodeBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A932BDD49A0001437B0 /* CodeBaseWebViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		7C5F999E2C5878BB0036D6BC /* OpenSourceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceWebViewController.swift; sourceTree = "<group>"; };
 		7C5F99A12C587A110036D6BC /* TSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSNavigationController.swift; sourceTree = "<group>"; };
+		7C5F99A32C5B07830036D6BC /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
 		7CED5A7C2BDD493C001437B0 /* TSWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CED5A812BDD493C001437B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				7C5F99A02C5879F20036D6BC /* NavigationController */,
 				7CED5A962BDD49A0001437B0 /* ViewControllers */,
 				7CED5A972BDD49A0001437B0 /* JavaScriptInterface.swift */,
+				7C5F99A32C5B07830036D6BC /* JavaScriptHandler.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CED5A9C2BDD49A0001437B0 /* JavaScriptInterface.swift in Sources */,
+				7C5F99A42C5B07830036D6BC /* JavaScriptHandler.swift in Sources */,
 				7CED5A992BDD49A0001437B0 /* CodeBaseWebViewController.swift in Sources */,
 				7C5F99A22C587A110036D6BC /* TSNavigationController.swift in Sources */,
 				7CED5A9B2BDD49A0001437B0 /* StoryboardWebViewController.swift in Sources */,

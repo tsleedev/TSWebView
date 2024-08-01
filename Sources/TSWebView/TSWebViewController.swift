@@ -49,7 +49,8 @@ open class TSWebViewController: UIViewController {
     }
     
     public required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.webView = TSWebView()
+        super.init(coder: coder)
     }
     
     open override func viewDidLoad() {

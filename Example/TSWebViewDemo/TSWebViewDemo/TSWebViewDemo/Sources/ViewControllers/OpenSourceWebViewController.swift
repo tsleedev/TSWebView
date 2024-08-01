@@ -12,17 +12,25 @@ import WebKit
 
 class OpenSourceWebViewController: TSWebViewController {
     private var startURL: String?
+    private var jsHandler: JavaScriptHandler?
     
-    convenience init(webView: TSWebView, startURL: String) {
-        self.init(webView: webView)
+    init(webView: TSWebView, startURL: String?) {
+        super.init(webView: webView)
         self.startURL = startURL
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.startURL = "https://tswebviewhosting.web.app"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerForAppStateNotifications()
-        webView.javaScriptEnable(target: self, protocol: JavaScriptInterface.self)
+        let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
+        webView.javaScriptEnable(target: jsHandler, protocol: JavaScriptInterface.self)
+        self.jsHandler = jsHandler
         
         if let startURL = startURL {
             webView.load(urlString: startURL)
@@ -35,11 +43,11 @@ class OpenSourceWebViewController: TSWebViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+//        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func createWebViewController(webView: TSWebView) -> TSWebViewController {
-        return OpenSourceWebViewController(webView: webView)
+        return OpenSourceWebViewController(webView: webView, startURL: nil)
     }
     
     override func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
@@ -70,61 +78,5 @@ extension OpenSourceWebViewController {
     
     @objc func applicationWillEnterForeground() {
         webView.evaluateJavaScript("onAppForeground()", completion: nil)
-    }
-}
-
-// MARK: - JavaScriptInterface
-extension OpenSourceWebViewController: JavaScriptInterface {
-    func screenEvent(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String
-        else { return }
-        let message = "name = \(name)"
-        let alert = UIAlertController(title: "screenEvent", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
-        alert.addAction(confirmAction)
-        present(alert, animated: true, completion: nil)
-//        Analytics.logEvent(name, parameters: params)
-    }
-    
-    func logEvent(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String
-//            let params = dictionary["parameters"] as? [String: Any]
-        else { return }
-//        let message = "name = \(name), parameters = \(params)"
-        let message = "name = \(name)"
-        let alert = UIAlertController(title: "logEvent", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
-        alert.addAction(confirmAction)
-        present(alert, animated: true, completion: nil)
-//        Analytics.logEvent(name, parameters: params)
-    }
-    
-    func setUserProperty(_ response: Any) {
-        guard
-            let dictionary = response as? [String: Any],
-            let name = dictionary["name"] as? String,
-            let value = dictionary["value"] as? String
-        else { return }
-        let message = "name = \(name), value = \(value)"
-        let alert = UIAlertController(title: "setUserProperty", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default)
-        alert.addAction(confirmAction)
-        present(alert, animated: true, completion: nil)
-//        Analytics.setUserProperty(value, forName: name)
-    }
-    
-    func openPhoneSettings(_ response: Any) {
-        guard let dictionary = response as? [String: Any] else { return }
-        
-        guard let setting = URL(string: UIApplication.openSettingsURLString) else { return }
-        UIApplication.shared.open(setting)
-                
-        guard let callback = dictionary["callbackId"] as? String else { return }
-        let script = "\(callback)();"
-        webView.evaluateJavaScript(script, completion: nil)
     }
 }
