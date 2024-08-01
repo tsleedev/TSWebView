@@ -27,23 +27,29 @@ class OpenSourceWebViewController: TSWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerForAppStateNotifications()
         let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
         webView.javaScriptEnable(target: jsHandler, protocol: JavaScriptInterface.self)
         self.jsHandler = jsHandler
+        webView.allowsBackForwardNavigationGestures = true
         
         if let startURL = startURL {
             webView.load(urlString: startURL)
         }
     }
     
-    deinit {
-        unregisterForAppStateNotifications()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registerForAppStateNotifications()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unregisterForAppStateNotifications()
     }
     
     override func createWebViewController(webView: TSWebView) -> TSWebViewController {
