@@ -104,21 +104,12 @@ public extension TSWebView {
         self.javaScriptController = javaScriptController
     }
     
-    func addScriptMessageHandler(target: WKScriptMessageHandler, messages: [[String: Any]]?) {
-        guard let messages = messages else { return }
-        let target = LeakAvoiderScriptMessageHandler(delegate: target)
-        messages.forEach { dic in
-            if let name = dic["name"] as? String {
-                configuration.userContentController.add(target, name: name)
-            }
-        }
+    @available(iOS 14.0, *)
+    func removeAllScriptMessageHandlers() {
+        configuration.userContentController.removeAllScriptMessageHandlers()
     }
     
     func removeScriptMessageHandler(messages: [[String: Any]]?) {
-        if #available(iOS 14.0, *) {
-            configuration.userContentController.removeAllScriptMessageHandlers()
-            return
-        }
         guard let messages = messages else { return }
         messages.forEach { dic in
             if let name = dic["name"] as? String {

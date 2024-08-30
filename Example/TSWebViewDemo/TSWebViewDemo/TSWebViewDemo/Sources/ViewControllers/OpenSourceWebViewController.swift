@@ -27,9 +27,6 @@ class OpenSourceWebViewController: TSWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
-        webView.javaScriptEnable(target: jsHandler, protocol: JavaScriptInterface.self)
-        self.jsHandler = jsHandler
         webView.allowsBackForwardNavigationGestures = true
         
         if let startURL = startURL {
@@ -40,6 +37,10 @@ class OpenSourceWebViewController: TSWebViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
+        webView.javaScriptEnable(target: jsHandler, protocol: JavaScriptInterface.self)
+        self.jsHandler = jsHandler
     }
     
     override func viewDidAppear(_ animated: Bool) {

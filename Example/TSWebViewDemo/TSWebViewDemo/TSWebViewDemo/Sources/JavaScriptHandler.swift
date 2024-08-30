@@ -11,8 +11,8 @@ import UIKit
 
 // MARK: - JavaScriptHandler
 class JavaScriptHandler: NSObject, JavaScriptInterface {
-    weak var viewController: UIViewController?
-    weak var webView: TSWebView?
+    private weak var viewController: UIViewController?
+    private let webView: TSWebView
     
     private var isAnimatingTabBar = false
     
@@ -69,7 +69,7 @@ class JavaScriptHandler: NSObject, JavaScriptInterface {
                 
         guard let callback = dictionary["callbackId"] as? String else { return }
         let script = "\(callback)();"
-        webView?.evaluateJavaScript(script, completion: nil)
+        webView.evaluateJavaScript(script, completion: nil)
     }
     
     func showTabBar(_ response: Any) {
@@ -85,7 +85,7 @@ class JavaScriptHandler: NSObject, JavaScriptInterface {
             isAnimatingTabBar = false
             guard let callback = dictionary["callbackId"] as? String else { return }
             let script = "\(callback)();"
-            webView?.evaluateJavaScript(script, completion: nil)
+            webView.evaluateJavaScript(script, completion: nil)
         }
     }
     
@@ -102,7 +102,7 @@ class JavaScriptHandler: NSObject, JavaScriptInterface {
             tabBar.isHidden = true
             guard let callback = dictionary["callbackId"] as? String else { return }
             let script = "\(callback)();"
-            webView?.evaluateJavaScript(script, completion: nil)
+            webView.evaluateJavaScript(script, completion: nil)
         }
     }
     
