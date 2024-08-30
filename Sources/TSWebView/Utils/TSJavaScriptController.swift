@@ -10,9 +10,7 @@ import WebKit
 
 extension WKWebView {
     func setJavaScriptController(_ controller: TSJavaScriptController) {
-        if configuration.preferences.javaScriptEnabled {
-            controller.injectTo(configuration.userContentController)
-        }
+        controller.injectTo(configuration.userContentController)
     }
 }
 
