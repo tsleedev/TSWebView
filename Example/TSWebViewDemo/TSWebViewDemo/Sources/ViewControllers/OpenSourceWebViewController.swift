@@ -9,6 +9,7 @@
 import TSWebView
 import UIKit
 import WebKit
+import SafariServices
 
 class OpenSourceWebViewController: TSWebViewController {
     private var startURL: String?
@@ -17,6 +18,7 @@ class OpenSourceWebViewController: TSWebViewController {
     init(webView: TSWebView, startURL: String?) {
         super.init(webView: webView)
         self.startURL = startURL
+        self.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -64,6 +66,29 @@ class OpenSourceWebViewController: TSWebViewController {
         }
         alert.addAction(confirmAction)
         present(alert, animated: true)
+    }
+}
+
+// MARK: - TSWebViewDelegate
+extension OpenSourceWebViewController: TSWebViewDelegate {
+    func configureWebView(for newWebView: TSWebView, with newURL: URL) -> Bool {
+        guard let currentURL = self.webView.url else { return false }
+        
+        // host가 동일한지 확인
+        if let currentHost = currentURL.host, let newHost = newURL.host, currentHost == newHost {
+            // URL에 appmode=modal이 있는지 확인
+            let urlComponents = URLComponents(url: newURL, resolvingAgainstBaseURL: false)
+            let isModal = urlComponents?.queryItems?.contains(where: { $0.name == "appmode" && $0.value == "modal" }) ?? false
+            
+            if isModal {
+                let viewController = OpenSourceWebViewController(webView: newWebView, startURL: nil)
+                let navigationController = UINavigationController(rootViewController: viewController)
+                navigationController.modalPresentationStyle = .fullScreen
+                present(navigationController, animated: true)
+                return true
+            }
+        }
+        return false
     }
 }
 

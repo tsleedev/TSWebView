@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import WebKit
+
+public protocol TSWebViewDelegate: AnyObject {
+    func configureWebView(for newWebView: TSWebView, with newURL: URL) -> Bool
+}
 
 open class TSWebViewController: UIViewController {
+    public weak var delegate: TSWebViewDelegate?
     public let webView: TSWebView
     public lazy var retryView: UIView = {
         let view = UIView()

@@ -40,22 +40,27 @@ extension TSWebViewController: WKUIDelegate {
               let newURL = navigationAction.request.url
         else { return nil }
         
-        if let currentHost = currentURL.host,
-           let newHost = newURL.host,
-           currentHost == newHost {
-            let webView = TSWebView(frame: .zero, configuration: configuration)
-            let viewController = createWebViewController(webView: webView)
+        let newWebView = TSWebView(frame: .zero, configuration: configuration)
+        if delegate?.configureWebView(for: newWebView, with: newURL) == true {
+            return newWebView
+        }
+        
+        if let currentHost = currentURL.host, let newHost = newURL.host, currentHost == newHost {
+            let viewController = createWebViewController(webView: newWebView)
             navigationController?.pushViewController(viewController, animated: true)
-            return webView
+            return newWebView
         } else {
             let viewController = SFSafariViewController(url: newURL)
             present(viewController, animated: true)
+            return nil
         }
-        
-        return nil
     }
     
     open func webViewDidClose(_ webView: WKWebView) {
+        if isModal {
+            dismiss(animated: true)
+            return
+        }
         guard var viewControllers = navigationController?.viewControllers,
               let index = viewControllers.firstIndex(where: { $0 == self })
         else { return }
@@ -68,5 +73,20 @@ extension TSWebViewController: WKUIDelegate {
             return nil
         }
         completionHandler(configuration)
+    }
+}
+
+fileprivate extension UIViewController {
+    var isModal: Bool {
+        if presentingViewController != nil {
+            return true
+        }
+        if navigationController?.presentingViewController?.presentedViewController == navigationController {
+            return true
+        }
+        if tabBarController?.presentingViewController is UITabBarController {
+            return true
+        }
+        return false
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C1624B62CDA32E200496C67 /* TSWebView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TSWebView; path = ../..; sourceTree = "<group>"; };
 		7C5F999E2C5878BB0036D6BC /* OpenSourceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceWebViewController.swift; sourceTree = "<group>"; };
 		7C5F99A12C587A110036D6BC /* TSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSNavigationController.swift; sourceTree = "<group>"; };
 		7C5F99A32C5B07830036D6BC /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		7CED5A732BDD493C001437B0 = {
 			isa = PBXGroup;
 			children = (
+				7C1624B62CDA32E200496C67 /* TSWebView */,
 				7CED5A7E2BDD493C001437B0 /* TSWebViewDemo */,
 				7CED5A7D2BDD493C001437B0 /* Products */,
 			);
@@ -167,7 +169,6 @@
 			);
 			mainGroup = 7CED5A732BDD493C001437B0;
 			packageReferences = (
-				7CFC3CED2BDD4F3000B1FC9F /* XCLocalSwiftPackageReference "../../.." */,
 			);
 			productRefGroup = 7CED5A7D2BDD493C001437B0 /* Products */;
 			projectDirPath = "";
@@ -429,13 +430,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		7CFC3CED2BDD4F3000B1FC9F /* XCLocalSwiftPackageReference "../../.." */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../..;
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		7CFC3CEE2BDD4F3000B1FC9F /* TSWebView */ = {
