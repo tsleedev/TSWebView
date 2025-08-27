@@ -15,6 +15,6 @@ import UIKit
     func logEvent(_ response: Any)
     func setUserProperty(_ response: Any)
     func openPhoneSettings(_ response: Any)
-    func showTabBar(_ response: Any)
-    func hideTabBar(_ response: Any)
+    func setTabBarVisible(_ response: Any)
+    func setSwipeGestureEnabled(_ response: Any)
 }
