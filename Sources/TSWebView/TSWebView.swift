@@ -131,19 +131,34 @@ public extension TSWebView {
         load(request)
     }
     
-    @objc func evaluateJavaScript(_ script: String?, completion: ((Any?, Error?) -> Void)? = nil) {
+    func evaluateJavaScript(_ script: String?, completion: ((Any?, Error?) -> Void)? = nil) {
         guard let script = script, !script.isEmpty else { return }
         DispatchQueue.main.async {
-            self.evaluateJavaScript(script) { (response, error) in
+            super.evaluateJavaScript(script) { (response, error) in
                 if let error = error {
                     print("TSWebView evaluateJavaScript error = \(error)")
                 }
                 if let response = response {
                     print("TSWebView evaluateJavaScript response = \(response)")
                 }
-                
                 completion?(response, error)
             }
+        }
+    }
+    
+    @MainActor
+    override func evaluateJavaScript(_ script: String?) async throws -> Any? {
+        guard let script = script, !script.isEmpty else { return nil }
+        
+        do {
+            let response = try await super.evaluateJavaScript(script)
+            if let response = response {
+                print("TSWebView evaluateJavaScript response = \(response)")
+            }
+            return response
+        } catch {
+            print("TSWebView evaluateJavaScript error = \(error)")
+            throw error
         }
     }
 }
