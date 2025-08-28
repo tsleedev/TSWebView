@@ -113,7 +113,7 @@ class JavaScriptHandler: NSObject, JavaScriptInterface {
         let targetY = visible ? originalY : originalY + tabBar.frame.height
         let totalDistance = tabBar.frame.height
         let remainingDistance = abs(targetY - currentY)
-        let duration = 0.3 * (remainingDistance / totalDistance)
+        let duration = totalDistance > 0 ? 0.3 * (remainingDistance / totalDistance) : 0
         
         UIView.animate(withDuration: duration) {
             if visible {
