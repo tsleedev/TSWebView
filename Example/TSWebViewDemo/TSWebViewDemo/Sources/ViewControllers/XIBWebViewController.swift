@@ -1,8 +1,8 @@
 //
-//  StoryboardWebViewController.swift
+//  XIBWebViewController.swift
 //  TSWebViewDemo
 //
-//  Created by TAE SU LEE on 2021/07/08.
+//  Created by TAE SU LEE on 2024/01/17.
 //  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
@@ -10,14 +10,14 @@ import UIKit
 import WebKit
 import TSWebView
 
-class StoryboardWebViewController: UIViewController {
+class XIBWebViewController: UIViewController {
     @IBOutlet private weak var webView: TSWebView!
     private var jsHandler: JavaScriptHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Storyboard"
+        title = "XIB"
         
         webView.uiDelegate = self
         let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
@@ -28,7 +28,7 @@ class StoryboardWebViewController: UIViewController {
 }
 
 // MARK: - WKUIDelegate
-extension StoryboardWebViewController: WKUIDelegate {
+extension XIBWebViewController: WKUIDelegate {
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in

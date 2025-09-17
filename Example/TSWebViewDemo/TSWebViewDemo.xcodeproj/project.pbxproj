@@ -10,6 +10,8 @@
 		7C5F999F2C5878BB0036D6BC /* OpenSourceWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F999E2C5878BB0036D6BC /* OpenSourceWebViewController.swift */; };
 		7C5F99A22C587A110036D6BC /* TSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F99A12C587A110036D6BC /* TSNavigationController.swift */; };
 		7C5F99A42C5B07830036D6BC /* JavaScriptHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F99A32C5B07830036D6BC /* JavaScriptHandler.swift */; };
+		7C76C5C82E7A41790068E2EC /* XIBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C5C72E7A41790068E2EC /* XIBWebViewController.swift */; };
+		7C76C5CA2E7A41880068E2EC /* XIBWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C76C5C92E7A41880068E2EC /* XIBWebViewController.xib */; };
 		7CED5A802BDD493C001437B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */; };
 		7CED5A822BDD493C001437B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A812BDD493C001437B0 /* SceneDelegate.swift */; };
 		7CED5A992BDD49A0001437B0 /* CodeBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED5A932BDD49A0001437B0 /* CodeBaseWebViewController.swift */; };
@@ -27,6 +29,8 @@
 		7C5F999E2C5878BB0036D6BC /* OpenSourceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceWebViewController.swift; sourceTree = "<group>"; };
 		7C5F99A12C587A110036D6BC /* TSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSNavigationController.swift; sourceTree = "<group>"; };
 		7C5F99A32C5B07830036D6BC /* JavaScriptHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptHandler.swift; sourceTree = "<group>"; };
+		7C76C5C72E7A41790068E2EC /* XIBWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBWebViewController.swift; sourceTree = "<group>"; };
+		7C76C5C92E7A41880068E2EC /* XIBWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBWebViewController.xib; sourceTree = "<group>"; };
 		7CED5A7C2BDD493C001437B0 /* TSWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CED5A7F2BDD493C001437B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CED5A812BDD493C001437B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				7CED5A942BDD49A0001437B0 /* MainViewController.swift */,
 				7CED5A952BDD49A0001437B0 /* StoryboardWebViewController.swift */,
 				7CED5A932BDD49A0001437B0 /* CodeBaseWebViewController.swift */,
+				7C76C5C72E7A41790068E2EC /* XIBWebViewController.swift */,
 				7C5F999E2C5878BB0036D6BC /* OpenSourceWebViewController.swift */,
 			);
 			path = ViewControllers;
@@ -117,6 +122,7 @@
 				7CED5A9E2BDD49C5001437B0 /* Info.plist */,
 				7CED5AA02BDD49C5001437B0 /* LaunchScreen.storyboard */,
 				7CED5AA22BDD49C5001437B0 /* Main.storyboard */,
+				7C76C5C92E7A41880068E2EC /* XIBWebViewController.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CED5AA62BDD49C5001437B0 /* LaunchScreen.storyboard in Resources */,
+				7C76C5CA2E7A41880068E2EC /* XIBWebViewController.xib in Resources */,
 				7CED5AA42BDD49C5001437B0 /* Assets.xcassets in Resources */,
 				7CED5AA72BDD49C5001437B0 /* Main.storyboard in Resources */,
 			);
@@ -198,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CED5A9C2BDD49A0001437B0 /* JavaScriptInterface.swift in Sources */,
+				7C76C5C82E7A41790068E2EC /* XIBWebViewController.swift in Sources */,
 				7C5F99A42C5B07830036D6BC /* JavaScriptHandler.swift in Sources */,
 				7CED5A992BDD49A0001437B0 /* CodeBaseWebViewController.swift in Sources */,
 				7C5F99A22C587A110036D6BC /* TSNavigationController.swift in Sources */,

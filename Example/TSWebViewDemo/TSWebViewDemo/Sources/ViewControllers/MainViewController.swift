@@ -12,6 +12,7 @@ import UIKit
 enum WebViewType {
     case storyboard
     case codeBase
+    case xib
     case opensource
 }
 
@@ -22,6 +23,8 @@ extension WebViewType {
             return "Make by Storyboard"
         case .codeBase:
             return "Make by CodeBase"
+        case .xib:
+            return "Make by XIB"
         case .opensource:
             return "Make by Opensource"
         }
@@ -31,7 +34,7 @@ extension WebViewType {
 class MainViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
-    private let types: [WebViewType] = [.storyboard, .codeBase, .opensource]
+    private let types: [WebViewType] = [.storyboard, .codeBase, .xib, .opensource]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +72,9 @@ extension MainViewController: UITableViewDelegate {
             performSegue(withIdentifier: "storyboard", sender: nil)
         case .codeBase:
             let destination = CodeBaseWebViewController()
+            navigationController?.pushViewController(destination, animated: true)
+        case .xib:
+            let destination = XIBWebViewController()
             navigationController?.pushViewController(destination, animated: true)
         case .opensource:
             let destination = OpenSourceWebViewController(
