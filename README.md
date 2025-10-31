@@ -49,7 +49,7 @@ Or in Xcode:
 ```swift
 import TSWebView
 
-// Create a TSWebView instance
+// Create a basic TSWebView instance (no progress indicator, no inspector)
 let webView = TSWebView()
 
 // Load a URL
@@ -60,6 +60,68 @@ webView.load(urlString: "https://example.com")
 
 // Add to your view hierarchy
 view.addSubview(webView)
+```
+
+### Configuration Options
+
+TSWebView uses a configuration object for flexible setup:
+
+```swift
+// Default configuration (all features disabled)
+let webView = TSWebView()
+
+// With progress indicator
+let webView = TSWebView(configuration: .init(
+    showsProgress: true
+))
+
+// With web inspector (for debugging)
+let webView = TSWebView(configuration: .init(
+    showsProgress: true,
+    isInspectable: true  // Enable in DEBUG builds only
+))
+
+// Custom progress bar colors
+let webView = TSWebView(configuration: .init(
+    showsProgress: true,
+    progressTrackColor: .systemGray,
+    progressTintColor: .systemBlue
+))
+```
+
+### Runtime Configuration
+
+You can also enable/disable features at runtime:
+
+```swift
+let webView = TSWebView()
+
+// Enable features
+webView.enableProgressIndicator()
+webView.enableWebInspector()
+
+// Disable features
+webView.disableProgressIndicator()
+webView.disableWebInspector()
+```
+
+### Recommended Setup
+
+```swift
+// Production: Progress indicator only
+#if DEBUG
+let config = TSWebViewConfiguration(
+    showsProgress: true,
+    isInspectable: true  // Inspector for debugging
+)
+#else
+let config = TSWebViewConfiguration(
+    showsProgress: true,
+    isInspectable: false  // Disable inspector in production
+)
+#endif
+
+let webView = TSWebView(configuration: config)
 ```
 
 ### Using TSWebViewController
