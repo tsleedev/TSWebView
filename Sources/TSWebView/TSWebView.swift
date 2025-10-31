@@ -23,7 +23,7 @@ open class TSWebView: WKWebView, Identifiable {
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
 
-    public convenience init(showsProgress: Bool = true, isInspectable: Bool = false) {
+    public convenience init() {
         let configuration = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
         configuration.applicationNameForUserAgent = Self.applictionNameForUserAgent
@@ -37,17 +37,14 @@ open class TSWebView: WKWebView, Identifiable {
         wkPreferences.javaScriptCanOpenWindowsAutomatically = true
         configuration.preferences = wkPreferences
         self.init(frame: .zero, configuration: configuration)
-        initialize(showsProgress: showsProgress, isInspectable: isInspectable)
     }
 
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
-        initialize(showsProgress: true, isInspectable: false)
     }
 
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        initialize(showsProgress: true, isInspectable: false)
     }
 
     deinit {
@@ -55,17 +52,33 @@ open class TSWebView: WKWebView, Identifiable {
         removeObserver()
     }
 
-    private func initialize(showsProgress: Bool, isInspectable: Bool) {
+    // MARK: - Configuration Methods
+    public func enableProgressIndicator() {
+        guard progressView == nil else { return }
+        createProgress()
+        observeProgress()
+    }
+
+    public func disableProgressIndicator() {
+        progressView?.removeFromSuperview()
+        progressView = nil
+        removeObserver()
+    }
+
+    public func enableWebInspector() {
         if #available(iOS 16.4, *) {
-            self.isInspectable = isInspectable
+            self.isInspectable = true
         }
-        if showsProgress {
-            createProgress()
-            observeProgress()
+    }
+
+    public func disableWebInspector() {
+        if #available(iOS 16.4, *) {
+            self.isInspectable = false
         }
     }
 
     private func observeProgress() {
+        guard progressObserver == nil else { return }
         progressObserver = observe(\.estimatedProgress, options: .new) { [weak self] _, change in
             guard
                 let self = self,
@@ -78,7 +91,7 @@ open class TSWebView: WKWebView, Identifiable {
     }
 
     // MARK: - Progress
-    func createProgress() {
+    private func createProgress() {
         if progressView != nil { return }
         let progressView = UIProgressView(progressViewStyle: .bar)
         progressView.trackTintColor = UIColor(
