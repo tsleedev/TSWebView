@@ -6,25 +6,39 @@
 //  Copyright © 2024 https://github.com/tsleedev/. All rights reserved.
 //
 
+import TSWebView
 import UIKit
 import WebKit
-import TSWebView
 
 class CodeBaseWebViewController: UIViewController {
-    private let webView = TSWebView()
-    
+    private lazy var webView: TSWebView = {
+        #if DEBUG
+            return TSWebView(
+                configuration: .init(
+                    showsProgress: true,
+                    isInspectable: true
+                ))
+        #else
+            return TSWebView(
+                configuration: .init(
+                    showsProgress: true,
+                    isInspectable: false
+                ))
+        #endif
+    }()
+
     var urlString: String?
     private var jsHandler: JavaScriptHandler?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "CodeBase"
-        
+
         setupViews()
         setupConstraints()
         configureUI()
-        
+
         if let urlString = urlString {
             webView.load(urlString: urlString)
         } else {
@@ -34,36 +48,39 @@ class CodeBaseWebViewController: UIViewController {
 }
 
 // MARK: - Setup
-private extension CodeBaseWebViewController {
+extension CodeBaseWebViewController {
     /// Initialize and add subviews
-    func setupViews() {
+    fileprivate func setupViews() {
         view.addSubview(webView)
         webView.uiDelegate = self
         let jsHandler = JavaScriptHandler(viewController: self, webView: webView)
         webView.javaScriptEnable(target: jsHandler, protocol: JavaScriptInterface.self)
         self.jsHandler = jsHandler
     }
-    
+
     /// Set up Auto Layout constraints
-    func setupConstraints() {
+    fileprivate func setupConstraints() {
         webView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
-    
+
     /// Initialize UI elements and localization
-    func configureUI() {
+    fileprivate func configureUI() {
         view.backgroundColor = .systemBackground
     }
 }
 
 // MARK: - WKUIDelegate
 extension CodeBaseWebViewController: WKUIDelegate {
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+    func webView(
+        _ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String,
+        initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void
+    ) {
         let alert = UIAlertController(title: "Custom", message: message, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
             completionHandler()
@@ -71,8 +88,11 @@ extension CodeBaseWebViewController: WKUIDelegate {
         alert.addAction(confirmAction)
         present(alert, animated: true, completion: nil)
     }
-    
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+
+    func webView(
+        _ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String,
+        initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void
+    ) {
         let alert = UIAlertController(title: "Custom", message: message, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
             completionHandler(true)
@@ -84,16 +104,24 @@ extension CodeBaseWebViewController: WKUIDelegate {
         alert.addAction(confirmAction)
         present(alert, animated: true, completion: nil)
     }
-    
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+
+    func webView(
+        _ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration,
+        for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures
+    ) -> WKWebView? {
         if navigationAction.targetFrame == nil {
             webView.load(navigationAction.request)
         }
         return nil
     }
-    
-    func webView(_ webView: WKWebView, contextMenuConfigurationForElement elementInfo: WKContextMenuElementInfo, completionHandler: @escaping (UIContextMenuConfiguration?) -> Void) {
-        let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
+
+    func webView(
+        _ webView: WKWebView,
+        contextMenuConfigurationForElement elementInfo: WKContextMenuElementInfo,
+        completionHandler: @escaping (UIContextMenuConfiguration?) -> Void
+    ) {
+        let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) {
+            suggestedActions in
             return nil
         }
         completionHandler(configuration)
