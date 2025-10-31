@@ -45,7 +45,7 @@ open class TSWebView: WKWebView, Identifiable {
     private weak var progressView: UIProgressView?
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
-    private var tsConfiguration: TSWebViewConfiguration
+    private let tsConfiguration: TSWebViewConfiguration
 
     public convenience init(configuration: TSWebViewConfiguration = .init()) {
         let wkConfiguration = WKWebViewConfiguration()
