@@ -14,6 +14,29 @@ class WebProgressPoolManager {
     private init() {}
 }
 
+// MARK: - TSWebViewConfiguration
+public struct TSWebViewConfiguration {
+    public var showsProgress: Bool
+    public var isInspectable: Bool
+    public var progressTrackColor: UIColor
+    public var progressTintColor: UIColor
+
+    public init(
+        showsProgress: Bool = false,
+        isInspectable: Bool = false,
+        progressTrackColor: UIColor = UIColor(
+            red: 245.0 / 255.0, green: 239.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0),
+        progressTintColor: UIColor = UIColor(
+            red: 138.0 / 255.0, green: 111.0 / 255.0, blue: 234.0 / 255.0, alpha: 1.0)
+    ) {
+        self.showsProgress = showsProgress
+        self.isInspectable = isInspectable
+        self.progressTrackColor = progressTrackColor
+        self.progressTintColor = progressTintColor
+    }
+}
+
+// MARK: - TSWebView
 open class TSWebView: WKWebView, Identifiable {
     public let id: String = UUID().uuidString
 
@@ -22,29 +45,38 @@ open class TSWebView: WKWebView, Identifiable {
     private weak var progressView: UIProgressView?
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
+    private var tsConfiguration: TSWebViewConfiguration
 
-    public convenience init() {
-        let configuration = WKWebViewConfiguration()
+    public convenience init(configuration: TSWebViewConfiguration = .init()) {
+        let wkConfiguration = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
-        configuration.applicationNameForUserAgent = Self.applictionNameForUserAgent
-        configuration.userContentController = userContentController
-        configuration.allowsInlineMediaPlayback = true
-        configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypes(
+        wkConfiguration.applicationNameForUserAgent = Self.applictionNameForUserAgent
+        wkConfiguration.userContentController = userContentController
+        wkConfiguration.allowsInlineMediaPlayback = true
+        wkConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypes(
             rawValue: 0)
-        configuration.processPool = WebProgressPoolManager.shared.progressPoll
+        wkConfiguration.processPool = WebProgressPoolManager.shared.progressPoll
 
         let wkPreferences = WKPreferences()
         wkPreferences.javaScriptCanOpenWindowsAutomatically = true
-        configuration.preferences = wkPreferences
-        self.init(frame: .zero, configuration: configuration)
+        wkConfiguration.preferences = wkPreferences
+        self.init(frame: .zero, configuration: wkConfiguration, tsConfiguration: configuration)
     }
 
-    public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+    public init(
+        frame: CGRect,
+        configuration: WKWebViewConfiguration,
+        tsConfiguration: TSWebViewConfiguration = .init()
+    ) {
+        self.tsConfiguration = tsConfiguration
         super.init(frame: frame, configuration: configuration)
+        applyConfiguration()
     }
 
     required public init?(coder: NSCoder) {
+        self.tsConfiguration = .init()
         super.init(coder: coder)
+        applyConfiguration()
     }
 
     deinit {
@@ -52,10 +84,22 @@ open class TSWebView: WKWebView, Identifiable {
         removeObserver()
     }
 
+    private func applyConfiguration() {
+        if tsConfiguration.isInspectable {
+            enableWebInspector()
+        }
+        if tsConfiguration.showsProgress {
+            enableProgressIndicator()
+        }
+    }
+
     // MARK: - Configuration Methods
     public func enableProgressIndicator() {
         guard progressView == nil else { return }
-        createProgress()
+        createProgress(
+            trackColor: tsConfiguration.progressTrackColor,
+            tintColor: tsConfiguration.progressTintColor
+        )
         observeProgress()
     }
 
@@ -91,13 +135,11 @@ open class TSWebView: WKWebView, Identifiable {
     }
 
     // MARK: - Progress
-    private func createProgress() {
+    private func createProgress(trackColor: UIColor, tintColor: UIColor) {
         if progressView != nil { return }
         let progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.trackTintColor = UIColor(
-            red: 245.0 / 255.0, green: 239.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
-        progressView.progressTintColor = UIColor(
-            red: 138.0 / 255.0, green: 111.0 / 255.0, blue: 234.0 / 255.0, alpha: 1.0)
+        progressView.trackTintColor = trackColor
+        progressView.progressTintColor = tintColor
         progressView.isHidden = true
         addSubview(progressView)
         if let superview = progressView.superview {

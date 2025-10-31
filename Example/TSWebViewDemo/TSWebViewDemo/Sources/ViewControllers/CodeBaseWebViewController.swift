@@ -11,7 +11,21 @@ import UIKit
 import WebKit
 
 class CodeBaseWebViewController: UIViewController {
-    private let webView = TSWebView()
+    private lazy var webView: TSWebView = {
+        #if DEBUG
+            return TSWebView(
+                configuration: .init(
+                    showsProgress: true,
+                    isInspectable: true
+                ))
+        #else
+            return TSWebView(
+                configuration: .init(
+                    showsProgress: true,
+                    isInspectable: false
+                ))
+        #endif
+    }()
 
     var urlString: String?
     private var jsHandler: JavaScriptHandler?
@@ -24,12 +38,6 @@ class CodeBaseWebViewController: UIViewController {
         setupViews()
         setupConstraints()
         configureUI()
-
-        // Enable optional features
-        webView.enableProgressIndicator()
-        #if DEBUG
-            webView.enableWebInspector()
-        #endif
 
         if let urlString = urlString {
             webView.load(urlString: urlString)
