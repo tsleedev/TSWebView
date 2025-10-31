@@ -23,7 +23,7 @@ open class TSWebView: WKWebView, Identifiable {
     private var progressObserver: NSKeyValueObservation?
     private var javaScriptController: TSJavaScriptController?
 
-    public convenience init(showsProgress: Bool = true, isInspectable: Bool = true) {
+    public convenience init(showsProgress: Bool = true, isInspectable: Bool = false) {
         let configuration = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
         configuration.applicationNameForUserAgent = Self.applictionNameForUserAgent
@@ -42,12 +42,12 @@ open class TSWebView: WKWebView, Identifiable {
 
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
-        initialize(showsProgress: true, isInspectable: true)
+        initialize(showsProgress: true, isInspectable: false)
     }
 
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        initialize(showsProgress: true, isInspectable: true)
+        initialize(showsProgress: true, isInspectable: false)
     }
 
     deinit {
